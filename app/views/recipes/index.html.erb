@@ -6,4 +6,8 @@
         <%= ingredient.amount %>
         <%= ingredient.food.name %>
       <% end %>
+  <%  recipe.directions.each do |direction| %>
+        <%= direction.description %>
+        <%= direction.step_order %>
+      <% end %>
 <% end %>
