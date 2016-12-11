@@ -1,0 +1,9 @@
+<% @recipes.each do |recipe| %>
+  <%= recipe.name %>
+  <%= recipe.description %>
+  <%= recipe.recipe_category.name %>
+  <%  recipe.ingredients.each do |ingredient| %>
+        <%= ingredient.amount %>
+        <%= ingredient.food.name %>
+      <% end %>
+<% end %>
