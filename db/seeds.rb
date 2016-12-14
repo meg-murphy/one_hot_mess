@@ -8,13 +8,13 @@
 
 
 
-recipe_category = RecipeCategory.new(name: "Vegetarian")
-recipe_category.save
+category = Category.new(name: "Appetizers/Sides")
+category.save
 
 
 recipe = Recipe.new(name: "Sweet Potato Quinoa Cakes with Blackberry Salsa",
 description: "A fall favorite",
-recipe_category_id: recipe_category.id)
+category_id: category.id)
 recipe.save
 
 
@@ -145,5 +145,5 @@ ingredient11.save
 user_type = UserType.new(name: "Admin")
 user_type.save
 
-user = User.new(name: "Meghan", phone_number: "8052088160", user_type: user_type.id)
+user = User.new(name: "Meghan", phone_number: "8052088160", user_type_id: user_type.id)
 user.save
