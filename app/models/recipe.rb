@@ -3,7 +3,7 @@ class Recipe < ApplicationRecord
   has_many :images
   has_many :ingredients
 
-  belongs_to :recipe_category
+  belongs_to :category
 
   has_many :favorites
   has_many :users, through: :favorites
