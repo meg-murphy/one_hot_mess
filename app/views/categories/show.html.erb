@@ -1,0 +1,12 @@
+<%= @category.name  %>
+<%= @category.recipes.id.name %>
+
+<% category.recipe.ingredients.each do |ingredient| %>
+      <%= ingredient.amount %>
+      <%= ingredient.food.name %>
+    <% end %>
+<% category.recipe.directions.each do |direction| %>
+    <%= direction.description %>
+    <%= direction.step_order %>
+  <% end %>
+<% end %>
