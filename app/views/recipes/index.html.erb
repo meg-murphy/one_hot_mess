@@ -1,13 +1,10 @@
 <% @recipes.each do |recipe| %>
-  <%= recipe.name %>
-  <%= recipe.description %>
-  <%= recipe.category.name %>
-  <%  recipe.ingredients.each do |ingredient| %>
-        <%= ingredient.amount %>
-        <%= ingredient.food.name %>
-      <% end %>
-  <%  recipe.directions.each do |direction| %>
-        <%= direction.description %>
-        <%= direction.step_order %>
-      <% end %>
-<% end %>
+  <h3> <%= link_to recipe.name, "/recipes/#{recipe.id}" %> </h3>
+
+  <div>
+  <% recipe.images.each do |image| %>
+  <img class="image-class" alt="Rails" src="<%=image.url%>"/>
+
+  <%end%>
+  </div>
+<%end%>

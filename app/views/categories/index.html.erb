@@ -1,16 +1,9 @@
 <% @categories.each do |category| %>
-  <%= category.name %>
+  <h1> <%= link_to category.name, "/categories/#{category.id}"%></h1>
+  
 
     <% category.recipes.each do |recipe| %>
-      <%= recipe.name %>
-    <% end %>
+      <%= link_to recipe.name, "/recipes/#{recipe.id}" %>
 
-    <% category.recipes.ingredients.each do |ingredient| %>
-          <%= ingredient.amount %>
-          <%= ingredient.food.name %>
-        <% end %>
-   <% category.recipes.directions.each do |direction| %>
-        <%= direction.description %>
-        <%= direction.step_order %>
-      <% end %>
+    <% end %>
 <% end %>

@@ -1,11 +1,27 @@
-<%= @recipe.name %>
-<%= @recipe.description %>
-<%= @recipe.category.name %>
+<h1><%= @recipe.name %></h1>
+<i><%= @recipe.description %></i>
+
+<%= form_tag "/recipes/#{@recipe.id}/to_make", method: :post do %>
+  <form class="form-inline">
+  <div class="form-group">
+    <%= hidden_field_tag :recipe_id, @recipe.id %>
+    <button type="submit" class="btn btn-primary">Make this!</button>
+  </div>
+<% end %>
+
+<div>
+<% @recipe.images.each do |image| %>
+  <img class="image-class" alt="Rails" src="<%=image.url%>"/>
+<%end%>
+</div>
+
+<h2>Ingredients</h2>
 <%  @recipe.ingredients.each do |ingredient| %>
-      <%= ingredient.amount %>
-      <%= ingredient.food.name %>
+      <ol> <%= ingredient.amount %> <%= ingredient.food.name %> </ol>
     <% end %>
+
+<h2>Directions</h2>
 <%  @recipe.directions.each do |direction| %>
-      <%= direction.description %>
-      <%= direction.step_order %>
+      <ol> <%= direction.step_order %> <%= direction.description %> </ol>
+
 <% end %>

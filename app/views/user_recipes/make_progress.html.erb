@@ -1,0 +1,27 @@
+<h1><%= @user_recipe.recipe.name %></h1>
+<i><%= @user_recipe.recipe.description %></i>
+
+<div>
+<% @user_recipe.recipe.images.each do |image| %>
+  <img class="image-class" alt="Rails" src="<%=image.url%>"/>
+<%end%>
+</div>
+
+ <h2>Ingredients</h2>
+<%= form_tag "/user_recipes", method: :post do %>
+  <% @user_recipe.selected_ingredients.each do |selected_ingredient| %>
+
+
+      <div class="checkbox">
+      <label>
+        <%= check_box_tag 'selected_ingredient_ids[]', selected_ingredient.id %> <%= selected_ingredient.ingredient.amount %> <%= selected_ingredient.ingredient.food.name %>
+      </label>
+      </div>
+
+      <% end %>
+
+  <div>
+    <%= submit_tag "Submit", class:"btn btn-default"%>
+  </div>
+
+<% end %>
