@@ -1,3 +1,5 @@
+require 'twilio-ruby'
+
 class UserRecipesController < ApplicationController
   def make
 
@@ -41,14 +43,25 @@ class UserRecipesController < ApplicationController
   end
 
   def make_submit
-
-    params[:selected_ingredient_ids].each do |id|
-      ingredient = SelectedIngredient.find_by(id: id)
-      ingredient.assign_attributes(do_i_have: true)
-      ingredient.save
+    @user_recipe = UserRecipe.find_by(id: params[:id])
+    if params[:phone_number] != ""
+      if params[:selected_ingredient_ids]
+        params[:selected_ingredient_ids].each do |id|
+          ingredient = SelectedIngredient.find_by(id: id)
+          ingredient.assign_attributes(do_i_have: true)
+          ingredient.save
+        end
+      end
+      @client = Twilio::REST::Client.new ENV[ACCOUNT_SID], ENV[AUTH_TOKEN]
+      @client.messages.create(
+        to: "+1#{params[:phone_number]}"
+        from: "+ENV[PHONE]"
+        message: @user_recipe.selected_ingredients.where(do_i_have: false).model_method
+      )
+      redirect_to "/recipes/"
+    else
+      render "make_progress"
     end
-
-    redirect_to "/recipes/"
 
 
   end

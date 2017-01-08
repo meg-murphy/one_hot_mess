@@ -49,7 +49,7 @@ step_order: 5)
 direction5.save
 
 direction6 = Direction.new(recipe_id: recipe.id,
-description: "UHeat the same skillet over medium heat and add olive oil. Add cakes and cook for 3-4 minutes per side, or until golden brown. Serve with blackberry salsa!",
+description: "Heat the same skillet over medium heat and add olive oil. Add cakes and cook for 3-4 minutes per side, or until golden brown. Serve with blackberry salsa!",
 step_order: 6)
 direction6.save
 
