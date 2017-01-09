@@ -1,5 +1,5 @@
 <h1><%= @recipe.name %></h1>
-<i><%= @recipe.description %></i>
+
 
 <%= form_tag "/recipes/#{@recipe.id}/to_make", method: :post do %>
   <form class="form-inline">
@@ -25,3 +25,5 @@
       <ol> <%= direction.step_order %> <%= direction.description %> </ol>
 
 <% end %>
+
+<i><%= @recipe.source %></i>

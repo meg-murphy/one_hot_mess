@@ -1,5 +1,5 @@
 <h1><%= @user_recipe.recipe.name %></h1>
-<i><%= @user_recipe.recipe.description %></i>
+
 
 <div>
 <% @user_recipe.recipe.images.each do |image| %>
@@ -26,3 +26,5 @@
   </div>
 
 <% end %>
+
+<i><%= @user_recipe.recipe.source %></i>

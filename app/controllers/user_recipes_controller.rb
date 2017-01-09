@@ -1,5 +1,3 @@
-require 'twilio-ruby'
-
 class UserRecipesController < ApplicationController
   def make
 
@@ -52,12 +50,15 @@ class UserRecipesController < ApplicationController
           ingredient.save
         end
       end
-      @client = Twilio::REST::Client.new ENV[ACCOUNT_SID], ENV[AUTH_TOKEN]
+      @client = Twilio::REST::Client.new(ENV["ACCOUNT_SID"], ENV["AUTH_TOKEN"])
       @client.messages.create(
-        to: "+1#{params[:phone_number]}"
-        from: "+ENV[PHONE]"
-        message: @user_recipe.selected_ingredients.where(do_i_have: false).model_method
+        from: ENV["PHONE"],
+        to: "+1#{params[:phone_number]}",
+        body: "#{@user_recipe.selected_ingredients.where(do_i_have: false).model_method}"
       )
+      @user_recipe.has_made = true
+      @user_recipe.to_make = false
+      @user_recipe.save
       redirect_to "/recipes/"
     else
       render "make_progress"
