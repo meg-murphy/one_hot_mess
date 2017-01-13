@@ -11,15 +11,9 @@
   </head>
 
   <body>
-      <% flash.each do |name, message| %>
-        <div class="alert alert-<%= name %> alert-dismissible" role="alert">
-          <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-          <%= message %>
-        </div>
-      <% end %>
 
 
-      <nav class="navbar navbar-default">
+      <nav class="my-nav navbar navbar-default">
         <div class="container-fluid">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -36,14 +30,14 @@
               <li class="active"><a href="/ingredients">Ingredients <span class="sr-only">(current)</span></a></li>
               <li><a href="/categories">Categories</a></li>
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                <ul class="dropdown-menu" role="menu">
-                  <li><a href="/ingredients">Ingredients</a></li>
-                  <li><a href="/categories">Categories</a></li>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
                   <li><a href="#">Something else here</a></li>
-                  <li class="divider"></li>
+                  <li role="separator" class="divider"></li>
                   <li><a href="#">Separated link</a></li>
-                  <li class="divider"></li>
+                  <li role="separator" class="divider"></li>
                   <li><a href="#">One more separated link</a></li>
                 </ul>
               </li>
@@ -60,6 +54,14 @@
           </div>
         </div>
       </nav>
+
+      <% flash.each do |name, message| %>
+        <div class="alert alert-<%= name %> alert-dismissible" role="alert">
+          <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+          <%= message %>
+        </div>
+      <% end %>
+
 
     <%= yield %>
 

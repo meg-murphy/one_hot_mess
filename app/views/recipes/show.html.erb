@@ -1,29 +1,42 @@
+<div class="container-fluid">
+<center>
 <h1><%= @recipe.name %></h1>
 
 
-<%= form_tag "/recipes/#{@recipe.id}/to_make", method: :post do %>
-  <form class="form-inline">
-  <div class="form-group">
-    <%= hidden_field_tag :recipe_id, @recipe.id %>
-    <button type="submit" class="btn btn-primary">Make this!</button>
-  </div>
-<% end %>
+  <% @recipe.images.each do |image| %>
+    <img class="image-class-show" alt="Rails" src="<%=image.url%>"/>
+  <%end%>
 
-<div>
-<% @recipe.images.each do |image| %>
-  <img class="image-class" alt="Rails" src="<%=image.url%>"/>
-<%end%>
+<div class="make-button">
+</br>
+    <%= form_tag "/recipes/#{@recipe.id}/to_make", method: :post do %>
+      <form class="form-inline">
+      <div class="form-group">
+        <%= hidden_field_tag :recipe_id, @recipe.id %>
+        <button type="submit" class="btn btn-primary">Make this!</button>
+      </div>
+    <% end %>
 </div>
 
-<h2>Ingredients</h2>
-<%  @recipe.ingredients.each do |ingredient| %>
-      <ol> <%= ingredient.amount %> <%= ingredient.food.name %> </ol>
-    <% end %>
 
-<h2>Directions</h2>
-<%  @recipe.directions.each do |direction| %>
-      <ol> <%= direction.step_order %> <%= direction.description %> </ol>
 
-<% end %>
+    </div>
+  <h2>Ingredients</h2>
+  <%  @recipe.ingredients.each do |ingredient| %>
+        <ol> <%= ingredient.amount %> <%= ingredient.food.name %> </ol>
+      <% end %>
 
-<i><%= @recipe.source %></i>
+
+
+
+
+
+  <h2>Directions</h2>
+  <%  @recipe.directions.each do |direction| %>
+        <ol> <%= direction.step_order %> <%= direction.description %> </ol>
+
+  <% end %>
+
+  <i><%= @recipe.source %></i>
+
+</center>
