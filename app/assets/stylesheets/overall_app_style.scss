@@ -1,11 +1,41 @@
-.my-nav {
-    background-image: url(pinkwatercolor.jpg);
+.sign-in-background{
+  background-image: url("background-signin.png");
+  opacity: 0.3;
+
+}
+body {
+  font-family: 'Raleway', sans-serif;
 }
 
-.index-body {
+.my-nav {
+    background: transparent;
+    font-family: 'Raleway', sans-serif;
+    padding: 0px;
+}
+
+img {
+  width: 700px;
+  height: auto;
+}
+
+.logo {
   padding: 40px;
 }
 
+.index-body {
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 30px;
+  padding-top: 20px;
+}
+
+.categories-index-body {
+  padding: 60px;
+}
+.categories-header {
+  text-align: center;
+
+}
 
 .image-class-show{
   width: 500px;
