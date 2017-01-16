@@ -1,4 +1,5 @@
 class UserRecipesController < ApplicationController
+  layout "pages" 
   def make
 
     @matching_user_recipe = UserRecipe.find_by(user_id: current_user.id, recipe_id: params[:id], to_make: true)

@@ -7,30 +7,30 @@
       <% counter = 0 %>
         <div class="row">
           <% category.recipes.each do |recipe| %>
-            <% if counter % 3 == 0 %>
-              </div>
-            <% end %>
 
             <% if counter % 3 == 0 %>
               <div class="row">
             <% end %>
 
-              <div class="col-md-4">
-                <% recipe.images.each do |image| %>
-                  <div class="hovereffect">
-                    <img class="img-responsive" alt="Rails" src="<%=image.url%>"></a>
+            <div class="col-md-4">
+              <% recipe.images.each do |image| %>
+                <div class="hovereffect">
+                  <img class="img-responsive" alt="Rails" src="<%=image.url%>"></a>
                   <div class="overlay">
                     <a class="info" href="/recipes/<%=recipe.id%>"><%=recipe.name%></a>
                   </div>
-                  </div>
-                <%end%>
-              </div>
+                </div>
+              <%end%>
+            </div>
 
+            <% if counter % 3 == 0 && counter != 0%>
+              </div>
+            <% end %>
             <% counter += 1 %>
           <%end%>
 
-          </div>
         </div>
+      </div>
     <% end %>
   </div>
 </div>

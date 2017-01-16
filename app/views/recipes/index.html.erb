@@ -1,8 +1,11 @@
 <div class="container-fluid">
   <div class="index-body">
-    
 
-  <% counter = 0 %>
+    <% if @recipes.blank? %>
+      <h4>There are no recipes containing <%= params[:search] %>.</h4>
+    <% end %>
+
+    <% counter = 0 %>
     <div class="row">
       <% @recipes.each do |recipe| %>
         <% if counter % 3 == 0 %>
