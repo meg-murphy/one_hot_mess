@@ -16,8 +16,13 @@
               <% recipe.images.each do |image| %>
                 <div class="hovereffect">
                   <img class="img-responsive" alt="Rails" src="<%=image.url%>"></a>
-                  <div class="overlay">
-                    <a class="info" href="/recipes/<%=recipe.id%>"><%=recipe.name%></a>
+                    <a href="/recipes/<%=recipe.id%>">
+                      <div class="overlay info">
+                        <div class="recipe_name">
+                          <%=recipe.name%>
+                        </div>
+                      </div>
+                    </a>
                   </div>
                 </div>
               <%end%>

@@ -1,0 +1,42 @@
+.my-btn-1 {
+  background-image: url("color-3x5box-75op-blur.png");
+}
+
+.recipe-image-show{
+  max-width: 90%;
+  height: auto;
+  display: block;
+  margin: 5%;
+}
+
+.make-button {
+  text-align: center;
+  margin-right: 100px;
+  margin-left: 100px;
+}
+
+.img-ingredient {
+  margin: 15px 70px 15px 70px;
+  background-image: url("color-1.jpg");
+}
+
+.recipe-show-body {
+  margin: 25px;
+}
+
+.recipe-show-title {
+  margin: 0px;
+  text-align: center;
+}
+
+.ingredient-show-box {
+  background-color: #f1f1f1;
+  max-width: 90%;
+  max-height: 90%;
+  display: block;
+  margin: 5%;
+  padding: 25px;
+  h2 {
+    margin-top: 0px;
+  }
+}

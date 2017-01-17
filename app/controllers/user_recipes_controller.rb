@@ -1,5 +1,5 @@
 class UserRecipesController < ApplicationController
-  layout "pages" 
+  layout "pages"
   def make
 
     @matching_user_recipe = UserRecipe.find_by(user_id: current_user.id, recipe_id: params[:id], to_make: true)
@@ -23,10 +23,6 @@ class UserRecipesController < ApplicationController
     else
       redirect_to "/recipes/#{@matching_user_recipe.id}/to_make"
     end
-
-
-
-
   end
 
   def make_progress

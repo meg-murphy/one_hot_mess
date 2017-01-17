@@ -1,9 +1,12 @@
-<%= @user.name %>
+<%= @user.email %>
 <%= @user.phone_number %>
 <%= @user.user_type.name %>
 
+<%= @user_recipe.recipe.name %>
 
-<div class="form-group">
-  <label class="control-label" for="focusedInput">Focused input</label>
-  <input class="form-control" id="focusedInput" type="text" value="This is focused...">
+
+<div>
+<% @user_recipe.recipe.images.each do |image| %>
+  <img class="image-class" alt="Rails" src="<%=image.url%>"/>
+<%end%>
 </div>

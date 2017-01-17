@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   post "recipes/:id/to_make", to: "user_recipes#make"
   get "recipes/:id/to_make", to: "user_recipes#make_progress"
 
+  get "users/:id", to: "users#show"
+
 
 
   # get "/users/:id", to: "users#show"

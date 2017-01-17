@@ -1,0 +1,22 @@
+.sign-in-background{
+  background-image: url("background-signin-45.png");
+  background-repeat: repeat-x;
+  padding: 0px;
+  margin: 0px;
+  height: 100vh;
+  background-size: cover;
+}
+
+.signup {
+  text-align: center;
+  align-self: center;
+  padding: 50px;
+  border: 2px solid white;
+  background-image: url("color-3x5box-75op-blur.png");
+}
+.wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+}
