@@ -2,7 +2,11 @@
   <div class="index-body">
 
     <% if @recipes.blank? %>
-      <h4>There are no recipes containing <%= params[:search] %>.</h4>
+      <% if params[:ingredient_search] %>
+        <h4>There are no recipes containing <%= params[:ingredient_search] %>.</h4>
+      <% elsif params[:search] %>
+        <h4>There are no recipes containing <%= params[:search] %>.</h4>
+      <% end %>
     <% end %>
 
     <% counter = 0 %>
@@ -18,17 +22,14 @@
 
 
           <div class="col-md-4">
-            <% recipe.images.each do |image| %>
             <div class="hovereffect">
-                <img class="img-responsive" alt="Rails" src="<%=image.url%>"></a>
+                <img class="img-responsive" alt="Rails" src="<%=recipe.images.first.url%>"></a>
                 <div class="overlay">
                   <a class="info" href="/recipes/<%=recipe.id%>">
                     <div class="recipe_name"><%=recipe.name%></div>
                   </a>
                 </div>
-
             </div>
-         <%end%>
         </div>
 
 

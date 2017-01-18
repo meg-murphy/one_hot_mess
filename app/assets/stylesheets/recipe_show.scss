@@ -1,5 +1,28 @@
 .my-btn-1 {
   background-image: url("color-3x5box-75op-blur.png");
+  margin-left: 60%;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  width: 175px;
+  border-radius: 8px;
+
+}
+.my-btn-2 {
+  background-image: url("color-3x5box-75op-blur.png");
+  margin-left: -60%;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  width: 175px;
+  border-radius: 8px;
+}
+
+.my-btn-3 {
+  background-image: url("color-3x5box-75op-blur.png");
+  margin-left: 0px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 172px;
+  border-radius: 8px;
 }
 
 .recipe-image-show{
@@ -7,6 +30,7 @@
   height: auto;
   display: block;
   margin: 5%;
+  // border: 10px solid #FF4500;
 }
 
 .make-button {
@@ -16,8 +40,10 @@
 }
 
 .img-ingredient {
-  margin: 15px 70px 15px 70px;
-  background-image: url("color-1.jpg");
+  margin: 15px 70px 50px 70px;
+  padding: 0px;
+    // border: 1px solid #FF4500;
+  // background-image: url("color-1.jpg");
 }
 
 .recipe-show-body {
@@ -30,11 +56,12 @@
 }
 
 .ingredient-show-box {
-  background-color: #f1f1f1;
-  max-width: 90%;
-  max-height: 90%;
+  // background-color: #f1f1f1;
+  // border: 10px solid #FF4500;
+  max-width: 100%;
+  max-height: 100%;
   display: block;
-  margin: 5%;
+  margin: 2%;
   padding: 25px;
   h2 {
     margin-top: 0px;

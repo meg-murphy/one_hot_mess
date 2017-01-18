@@ -2,11 +2,9 @@
 <%= @user.phone_number %>
 <%= @user.user_type.name %>
 
-<%= @user_recipe.recipe.name %>
-
-
 <div>
-<% @user_recipe.recipe.images.each do |image| %>
-  <img class="image-class" alt="Rails" src="<%=image.url%>"/>
+<% @user.recipes.each do |fav_recipe| %>
+  <%= fav_recipe.name %>
+
 <%end%>
 </div>

@@ -1,30 +1,32 @@
-<h1><%= @user_recipe.recipe.name %></h1>
-
-
-<div>
-<% @user_recipe.recipe.images.each do |image| %>
-  <img class="image-class" alt="Rails" src="<%=image.url%>"/>
-<%end%>
-</div>
-
- <h2>Ingredients</h2>
-<%= form_tag "/user_recipes", method: :post do %>
-  <% @user_recipe.selected_ingredients.each do |selected_ingredient| %>
-
-
-      <div class="checkbox">
-      <label>
-        <%= check_box_tag 'selected_ingredient_ids[]', selected_ingredient.id %> <%= selected_ingredient.ingredient.amount %> <%= selected_ingredient.ingredient.food.name %>
-      </label>
-      </div>
-
-      <% end %>
-      <%= text_field_tag :phone_number, current_user.phone_number %> :Phone Number
-      <%= hidden_field_tag :id, @user_recipe.id %>
-  <div>
-    <%= submit_tag "Submit", class:"btn btn-default"%>
+<div class="container-fluid recipe-show-body">
+  <div class="recipe-show-title row">
+    <h1><%= @user_recipe.recipe.name %></h1>
   </div>
 
-<% end %>
-
-<i><%= @user_recipe.recipe.source %></i>
+  <div class="img-ingredient row">
+    <div class="col-md-6">
+      <% @user_recipe.recipe.images.each do |image| %>
+        <img class="recipe-image-show" alt="Rails" src="<%=image.url%>"/>
+      <%end%>
+    </div>
+    <div class="col-md-6">
+      <div class="ingredient-show-box">
+        <h2>Ingredients</h2>
+        <%= form_tag "/user_recipes", method: :post do %>
+          <% @user_recipe.selected_ingredients.each do |selected_ingredient| %>
+            <div class="checkbox">
+              <label>
+                <%= check_box_tag 'selected_ingredient_ids[]', selected_ingredient.id %> <%= selected_ingredient.ingredient.amount %> <%= selected_ingredient.ingredient.food.name %>
+              </label>
+            </div>
+            <% end %>
+            <%= text_field_tag :phone_number, current_user.phone_number %>
+            <%= hidden_field_tag :id, @user_recipe.id %>
+            <div>
+              <%= submit_tag "Get shopping list", class:"my-btn-3 btn btn-default"%>
+            </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
