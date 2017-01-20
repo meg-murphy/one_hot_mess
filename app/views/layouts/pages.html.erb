@@ -52,10 +52,16 @@
 
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">  <i class="my-icon-menu-bar material-icons">menu</i></a>
                     <ul class="my-dropdown-menu dropdown-menu">
-                    <li class="nav-link-btn-1"> <a href="/categories">Categories <span class="sr-only">(current)</span></a></li>
-                    <li class="nav-link-btn-1"> <a href="/ingredients">Ingredients <span class="sr-only">(current)</span></a></li>
-                    <li class="nav-link-btn-1"> <a href="/users">Profile <span class="sr-only">(current)</span></a></li>
-                    <li class="nav-link-btn-1"> <a href="/users/sign_out">Sign Out <span class="sr-only">(current)</span></a></li>
+                      <li class="nav-link-btn-1"> <a href="/ingredients">Ingredients <span class="sr-only">(current)</span></a></li>
+                      <li role="separator" class="divider"></li>
+                      <li class="nav-link-btn-1"> <a href="/categories">Categories <span class="sr-only">(current)</span></a></li>
+                        <% @navbar_categories.each do |category| %>
+                          <li class="nav-link-btn-1"> <a href="/categories/<%="#{category.id}"%>"> <%="  - #{category.name}"%> <span class="sr-only">(current)</span></a></li>
+                          <li role="separator" class="my-divider divider"></li>
+                        <%end%>
+                      <li class="nav-link-btn-1"> <a href="/users/<%="#{current_user.id}"%>">Profile <span class="sr-only">(current)</span></a></li>
+                      <li role="separator" class="divider"></li>
+                      <li class="nav-link-btn-1"> <a href="/users/sign_out">Sign Out <span class="sr-only">(current)</span></a></li>
                     </ul>
                 </li>
 

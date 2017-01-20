@@ -3,7 +3,7 @@
     <h1><%= @user_recipe.recipe.name %></h1>
   </div>
 
-  <div class="img-ingredient row">
+  <div class=" flexbox-container row">
     <div class="col-md-6">
       <% @user_recipe.recipe.images.each do |image| %>
         <img class="recipe-image-show" alt="Rails" src="<%=image.url%>"/>

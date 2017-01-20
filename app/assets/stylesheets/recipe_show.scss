@@ -1,36 +1,29 @@
 .my-btn-1 {
-  background-image: url("color-3x5box-75op-blur.png");
+  background-image: url("color-3x5box-72op.png");
   margin-left: 60%;
-  margin-top: 30px;
-  margin-bottom: 15px;
+  margin-top: 0px;
+  margin-bottom: 0px;
   width: 175px;
   border-radius: 8px;
 
 }
 .my-btn-2 {
-  background-image: url("color-3x5box-75op-blur.png");
-  margin-left: -60%;
-  margin-top: 30px;
-  margin-bottom: 15px;
+  background-image: url("color-3x5box-72op.png");
+  margin-left: -75%;
+  margin-top: 0px;
+  margin-bottom: 0px;
   width: 175px;
   border-radius: 8px;
 }
 
 .my-btn-3 {
-  background-image: url("color-3x5box-75op-blur.png");
+  background-image: url("color-3x5box-72op.png");
   margin-left: 0px;
   margin-top: 10px;
   margin-bottom: 10px;
   width: 172px;
+  border: 4px solid #cc8c8a;
   border-radius: 8px;
-}
-
-.recipe-image-show{
-  max-width: 90%;
-  height: auto;
-  display: block;
-  margin: 5%;
-  // border: 10px solid #FF4500;
 }
 
 .make-button {
@@ -39,11 +32,34 @@
   margin-left: 100px;
 }
 
+.recipe-image-show{
+  // max-width: 100%;
+  // min-width: 30%;
+  height: auto;
+  display: block;
+  // margin: 5%;
+  border: 2px solid #cc8c8a;
+}
+
+
 .img-ingredient {
-  margin: 15px 70px 50px 70px;
+
   padding: 0px;
-    // border: 1px solid #FF4500;
+  // max-height: 100%;
+  border: 1px solid #cc8c8a;
   // background-image: url("color-1.jpg");
+  //
+  // background-image: url("color-3x5box-33op-blur.png");
+  // opacity: 0.7;
+  // border: 10px solid #FF4500;
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  margin: 2%;
+  padding: 25px;
+  h2 {
+    margin-top: 0px;
+  }
 }
 
 .recipe-show-body {
@@ -57,13 +73,53 @@
 
 .ingredient-show-box {
   // background-color: #f1f1f1;
+  // background-color: #faf4f4;
   // border: 10px solid #FF4500;
   max-width: 100%;
   max-height: 100%;
+  // opacity: 0.7;
+
+  // max-height: 100%;
   display: block;
-  margin: 2%;
-  padding: 25px;
-  h2 {
-    margin-top: 0px;
+  // margin: 2%;
+  // padding: 25px;
+  // h2 {
+  //   margin-top: 0px;
+  // }
+}
+
+.img-ingredient-inner-box {
+    background-image: url("color-1.png");
+    max-height: 600px;
+    // margin-top: 2.5%;
+
+}
+
+.recipe-show-body {
+  ol {
+    font-size: 18px;
+    font-color: #00264d;
+
   }
+}
+
+
+.flexbox-container {
+  margin: 15px 70px 50px 70px;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	-webkit-box-align: center;
+
+	align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.source {
+  padding-top: 20px;
+  font-size: 8px;
 }

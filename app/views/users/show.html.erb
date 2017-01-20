@@ -1,10 +1,35 @@
-<%= @user.email %>
-<%= @user.phone_number %>
-<%= @user.user_type.name %>
+<div class="container-fluid">
+  <div class="index-body">
 
-<div>
-<% @user.recipes.each do |fav_recipe| %>
-  <%= fav_recipe.name %>
+    <%= @user.email %>
+    <%= @user.name %>
 
-<%end%>
+    <% counter = 0 %>
+    <div class="row">
+      <% @user.recipes.each do |fav_recipe| %>
+        <% if counter % 3 == 0 %>
+          </div>
+        <% end %>
+
+        <% if counter % 3 == 0 %>
+          <div class="row">
+        <% end %>
+
+
+          <div class="col-md-4">
+            <div class="hovereffect">
+                <img class="img-responsive" alt="Rails" src="<%=fav_recipe.images.first.url%>"></a>
+                <div class="overlay">
+                  <a class="info" href="/recipes/<%=fav_recipe.id%>">
+                    <div class="recipe_name"><%=fav_recipe.name%></div>
+                  </a>
+                </div>
+            </div>
+        </div>
+
+
+      <% counter += 1 %>
+      <%end%>
+    </div>
+  </div>
 </div>

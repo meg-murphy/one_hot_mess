@@ -4,6 +4,24 @@
     <h1><%= @recipe.name %></h1>
   </div>
 
+  <div class="flexbox-container">
+
+    <div class="col-md-6 col-xs-12">
+      <% @recipe.images.each do |image| %>
+        <img class="img-responsive recipe-image-show" alt="Rails" src="<%=image.url%>"/>
+      <%end%>
+    </div>
+
+    <div class="col-md-6 col-xs-12">
+      <div class="img-ingredient">
+      <h2>Ingredients</h2>
+      <% @recipe.ingredients.each do |ingredient| %>
+            <ol> <%= ingredient.amount %> <%= ingredient.food.name %> </ol>
+      <% end %>
+    </div>
+    </div>
+  </div>
+
   <div class="make-button row">
     <div class="col-md-6">
       <%= form_tag "/recipes/#{@recipe.id}/to_make", method: :post do %>
@@ -19,25 +37,7 @@
     </div>
   </div>
 
-  <div class="img-ingredient row">
-    <div class="col-md-6">
-      <% @recipe.images.each do |image| %>
-        <img class="recipe-image-show" alt="Rails" src="<%=image.url%>"/>
-      <%end%>
-    </div>
-    <div class="col-md-6">
-      <div class="ingredient-show-box">
-      <h2>Ingredients</h2>
-      <% @recipe.ingredients.each do |ingredient| %>
-            <ol> <%= ingredient.amount %> <%= ingredient.food.name %> </ol>
-      <% end %>
-    </div>
-
-
-    </div>
-  </div>
-
-  <div class="img-ingredient row">
+  <div class="row">
     <div class="ingredient-show-box">
     <h2>Directions</h2>
     <% @recipe.directions.each do |direction| %>
@@ -46,7 +46,7 @@
     </div>
   </div>
 
-  <div class="row">
+  <div class="source row">
     <i><%= @recipe.source %></i>
   </div>
 

@@ -53,7 +53,6 @@ h2 {
     width: 640px;
     margin-left: 5px;
     text-align: center;
-    border-radius: 4px;
     border-style: 1px solid #cc8c8a;
   }
 }
@@ -86,7 +85,8 @@ h2 {
 }
 
 .my-dropdown-menu  {
-  background-color: #f1f1f1;
+  background-color: rgba(241, 241, 241, 0.8);
+  // opacity: 50%;
 }
 
 #my-search {
@@ -113,3 +113,8 @@ h2 {
 .my-icon-menu-bar {
   color: #cc8c8a;
 }
+
+// .my-divider  {
+//   color: black;
+//   weight: 2px;
+// }
