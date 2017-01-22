@@ -1,9 +1,15 @@
 <div class="container-fluid">
   <div class="index-body">
+    <div class="user-name">
+      <h4> <%= @user.name %> </h4>
+    </div>
 
-    <%= @user.email %>
-    <%= @user.name %>
+    <%= image_tag @user.image + "?type=large" %>
 
+
+
+<div class="">
+  <h3>Your saved recipes: </h3>
     <% counter = 0 %>
     <div class="row">
       <% @user.recipes.each do |fav_recipe| %>
@@ -31,5 +37,6 @@
       <% counter += 1 %>
       <%end%>
     </div>
+  </div>
   </div>
 </div>

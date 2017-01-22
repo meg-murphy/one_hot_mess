@@ -3,30 +3,39 @@
     <h1><%= @user_recipe.recipe.name %></h1>
   </div>
 
-  <div class=" flexbox-container row">
+  <div class="text-info">
+    Select the ingredients you already have at home and then enter your phone number below to recive a text with the ingredients you need to pick up.
+  </div>
+
+
+  <div class="flexbox-container row">
     <div class="col-md-6">
       <% @user_recipe.recipe.images.each do |image| %>
-        <img class="recipe-image-show" alt="Rails" src="<%=image.url%>"/>
+        <img class="img-responsive recipe-image-show" alt="Rails" src="<%=image.url%>"/>
       <%end%>
     </div>
     <div class="col-md-6">
-      <div class="ingredient-show-box">
+      <div class="ingredients">
         <h2>Ingredients</h2>
         <%= form_tag "/user_recipes", method: :post do %>
           <% @user_recipe.selected_ingredients.each do |selected_ingredient| %>
-            <div class="checkbox">
+            <div class="my-checkbox checkbox">
               <label>
                 <%= check_box_tag 'selected_ingredient_ids[]', selected_ingredient.id %> <%= selected_ingredient.ingredient.amount %> <%= selected_ingredient.ingredient.food.name %>
               </label>
             </div>
             <% end %>
-            <%= text_field_tag :phone_number, current_user.phone_number %>
+              </div>
+          </div>
+          <div class="phone-number-submit row">
+            Enter your phone number to receive your shopping list: <br> <%= text_field_tag :phone_number, current_user.phone_number %>
             <%= hidden_field_tag :id, @user_recipe.id %>
             <div>
               <%= submit_tag "Get shopping list", class:"my-btn-3 btn btn-default"%>
             </div>
         <% end %>
       </div>
+
     </div>
   </div>
 </div>

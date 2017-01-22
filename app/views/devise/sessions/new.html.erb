@@ -1,11 +1,14 @@
 <div class="container-fluid">
   <div class="wrapper">
-    <div class="signin">
+    <div class="signup">
 
         <h2>Log in</h2>
-        <%= render "devise/shared/links" %>
 
-        <a class="my-btn-4" href=“/auth/facebook”>Sign in with Facebook</a>
+            <%= link_to user_facebook_omniauth_authorize_path, class: "img-responsive fbook-btn" do %>
+              <%= image_tag "facebook-login-blue.png"%>
+            <% end %>
+
+
 
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 

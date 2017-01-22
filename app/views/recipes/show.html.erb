@@ -13,7 +13,7 @@
     </div>
 
     <div class="col-md-6 col-xs-12">
-      <div class="img-ingredient">
+      <div class="ingredients">
       <h2>Ingredients</h2>
       <% @recipe.ingredients.each do |ingredient| %>
             <ol> <%= ingredient.amount %> <%= ingredient.food.name %> </ol>
@@ -22,7 +22,7 @@
     </div>
   </div>
 
-  <div class="make-button row">
+  <div class="make-save-buttons row">
     <div class="col-md-6">
       <%= form_tag "/recipes/#{@recipe.id}/to_make", method: :post do %>
           <%= hidden_field_tag :recipe_id, @recipe.id %>
@@ -38,7 +38,7 @@
   </div>
 
   <div class="row">
-    <div class="ingredient-show-box">
+    <div class="direction-show-box">
     <h2>Directions</h2>
     <% @recipe.directions.each do |direction| %>
           <ol> <%= direction.step_order %> <%= direction.description %> </ol>
@@ -47,7 +47,7 @@
   </div>
 
   <div class="source row">
-    <i><%= @recipe.source %></i>
+    <i>Adapted from: <%= @recipe.source %></i>
   </div>
 
 </div>

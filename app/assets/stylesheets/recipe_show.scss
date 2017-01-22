@@ -1,57 +1,49 @@
 .my-btn-1 {
-  background-image: url("color-3x5box-72op.png");
+  background-image: url("color-1.png");
   margin-left: 60%;
   margin-top: 0px;
   margin-bottom: 0px;
   width: 175px;
+  border: 1px solid #cc8c8a;
   border-radius: 8px;
 
 }
 .my-btn-2 {
-  background-image: url("color-3x5box-72op.png");
+  background-image: url("color-1.png");
   margin-left: -75%;
   margin-top: 0px;
   margin-bottom: 0px;
   width: 175px;
+  border: 1px solid #cc8c8a;
   border-radius: 8px;
 }
 
 .my-btn-3 {
-  background-image: url("color-3x5box-72op.png");
+  background-image: url("color-1.png");
   margin-left: 0px;
   margin-top: 10px;
   margin-bottom: 10px;
-  width: 172px;
-  border: 4px solid #cc8c8a;
+  width: 175px;
+  border: 1px solid #cc8c8a;
   border-radius: 8px;
 }
 
-.make-button {
+.make-save-buttons {
   text-align: center;
   margin-right: 100px;
   margin-left: 100px;
+  padding-top: 0px;
 }
 
 .recipe-image-show{
-  // max-width: 100%;
-  // min-width: 30%;
   height: auto;
   display: block;
-  // margin: 5%;
   border: 2px solid #cc8c8a;
 }
 
-
-.img-ingredient {
-
+.ingredients {
   padding: 0px;
-  // max-height: 100%;
   border: 1px solid #cc8c8a;
-  // background-image: url("color-1.jpg");
-  //
-  // background-image: url("color-3x5box-33op-blur.png");
-  // opacity: 0.7;
-  // border: 10px solid #FF4500;
   max-width: 100%;
   max-height: 100%;
   display: block;
@@ -71,35 +63,17 @@
   text-align: center;
 }
 
-.ingredient-show-box {
-  // background-color: #f1f1f1;
-  // background-color: #faf4f4;
-  // border: 10px solid #FF4500;
-  max-width: 100%;
-  max-height: 100%;
-  // opacity: 0.7;
-
-  // max-height: 100%;
+.direction-show-box {
+  // border: 1px solid #cc8c8a;
   display: block;
-  // margin: 2%;
-  // padding: 25px;
-  // h2 {
-  //   margin-top: 0px;
-  // }
-}
-
-.img-ingredient-inner-box {
-    background-image: url("color-1.png");
-    max-height: 600px;
-    // margin-top: 2.5%;
-
+  margin: 2%;
+  padding: 25px;
 }
 
 .recipe-show-body {
   ol {
     font-size: 18px;
     font-color: #00264d;
-
   }
 }
 
@@ -120,6 +94,26 @@
 }
 
 .source {
-  padding-top: 20px;
-  font-size: 8px;
+  padding-top: 30px;
+  font-size: 11px;
+}
+
+.my-checkbox  {
+  padding-left: 20px;
+  label {
+    font-size: 18px;
+  }
+}
+
+.phone-number-submit {
+  text-align: center;
+  padding-top: 30px;
+}
+
+
+.text-info {
+  padding-top: 30px;
+  text-align: center;
+  font-size: 18px;
+  font-color: #00264d;
 }
