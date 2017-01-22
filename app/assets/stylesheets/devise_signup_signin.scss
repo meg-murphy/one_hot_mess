@@ -44,13 +44,20 @@
 }
 
 .fbook-btn {
-
   width: 80%;
   height: auto;
+  img {
+    text-align: center;
+  }
 }
 
 .my-btn-6 {
-  background-color: #2F4F4F;
-  margin: 15px;
-
+  input {
+    background-color: #6B6B6B;
+    margin-top: 15px;
+    padding: 10px;
+    color: white;
+    font-size: 15px;
+    font-family: 'Raleway', sans-serif;
+  }
 }

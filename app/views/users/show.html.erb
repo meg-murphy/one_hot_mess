@@ -1,28 +1,45 @@
 <div class="container-fluid">
   <div class="index-body">
-    <div class="user-name">
-      <h4> <%= @user.name %> </h4>
+
+    <div class="row">
+      <div class="col-md-4">
+        <div class="user-name">
+        </div>
+      </div>
+      <div class="welcome col-md-4">
+        <h4> Welcome back, </h4>
+        <h3> <%= @user.name %>! </h3>
+      </div>
+      <div class="col-md-4">
+        <div class="FBimage img-responsive">
+          <% if @user.image %>
+            <%= image_tag @user.image + "?type=large" %>
+          <% else %>
+            <%= image_tag "FB-default-pic.jpg" + "?type=large" %>
+          <% end %>
+        </div>
+      </div>
     </div>
 
-    <%= image_tag @user.image + "?type=large" %>
+    <div class="saved-header row">
+      <h3>Your Recipes: </h3>
+    </div>
 
 
 
-<div class="">
-  <h3>Your saved recipes: </h3>
     <% counter = 0 %>
     <div class="row">
       <% @user.recipes.each do |fav_recipe| %>
-        <% if counter % 3 == 0 %>
+        <% if counter % 4 == 0 %>
           </div>
         <% end %>
 
-        <% if counter % 3 == 0 %>
+        <% if counter % 4 == 0 %>
           <div class="row">
         <% end %>
 
 
-          <div class="col-md-4">
+          <div class="col-md-3">
             <div class="hovereffect">
                 <img class="img-responsive" alt="Rails" src="<%=fav_recipe.images.first.url%>"></a>
                 <div class="overlay">

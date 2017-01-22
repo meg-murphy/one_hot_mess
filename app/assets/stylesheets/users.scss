@@ -1,3 +1,37 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.FBimage {
+  img {
+    height: 150px;
+    width: 150px;
+    border: 2px solid #cc8c8a;
+  }
+  text-align: right;
+  display: block;
+}
+
+.saved-header {
+  font-family: 'Raleway', sans-serif;
+  color: #00264d;
+  border-top: 1px solid #cc8c8a;
+  border-bottom: 4px double #cc8c8a;
+  text-align: center;
+  margin-top: 5%;
+  margin-bottom: 2%;
+  h3 {
+    font-family: 'Raleway', sans-serif;
+    color: #00264d;
+    text-align: center;
+  }
+}
+
+.welcome {
+  h3,h4 {
+    font-family: 'Raleway', sans-serif;
+    color: #00264d;
+    text-align: center;
+  }
+}
