@@ -83,11 +83,9 @@
 	display: -ms-flexbox;
 	display: -webkit-flex;
 	display: flex;
-
 	-ms-flex-align: center;
 	-webkit-align-items: center;
 	-webkit-box-align: center;
-
 	align-items: center;
   justify-content: center;
   flex-wrap: wrap;
@@ -96,6 +94,10 @@
 .source {
   padding-top: 30px;
   font-size: 11px;
+}
+
+.icheckbox_flat-red.checked {
+  background-position: -49px 0 !important;
 }
 
 .my-checkbox  {
@@ -107,6 +109,8 @@
 
 .phone-number-submit {
   text-align: center;
+  font-family: 'Raleway', sans-serif;
+  color: #00264d;
   padding-top: 30px;
 }
 
@@ -115,6 +119,12 @@
   padding-top: 30px;
   text-align: center;
   font-size: 18px;
+  font-family: 'Raleway', sans-serif;
+  color: #00264d;
+}
+
+.step-number {
+  font-size: 32px;
   font-family: 'Raleway', sans-serif;
   color: #00264d;
 }

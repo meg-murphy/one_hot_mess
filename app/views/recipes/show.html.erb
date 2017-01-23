@@ -41,7 +41,8 @@
     <div class="direction-show-box">
     <h2>Directions</h2>
     <% @recipe.directions.each do |direction| %>
-          <ol> <%= direction.step_order %> <%= direction.description %> </ol>
+          <ol> <span class="step-number"> <%= direction.step_order %> </span>
+            <span> <%= direction.description %> </span> </ol>
     <% end %>
     </div>
   </div>
