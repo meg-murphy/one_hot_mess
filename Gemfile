@@ -34,6 +34,8 @@ gem 'twilio-ruby'
 gem 'devise'
 gem 'omniauth-facebook'
 gem "roo", "~> 2.7.0"
+ruby "2.3.1"
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
