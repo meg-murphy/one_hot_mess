@@ -6,8 +6,14 @@ class User < ApplicationRecord
   has_many :favorites
   has_many :recipes, through: :favorites
 
-  has_many :followees, :class_name => 'Followings', :foreign_key => 'follower_id'
-  has_many :followers, :class_name => 'Followings', :foreign_key => 'followee_id'
+  #add follower/followee relationship
+  has_many :follower_relationships, foreign_key: :followee_id, class_name: 'Following'
+  has_many :followers, through: :follower_relationships, source: :follower
+
+  has_many :followee_relationships, foreign_key: :follower_id, class_name: 'Following'
+  has_many :followees, through: :followee_relationships, source: :followee
+
+
 
   has_many :user_recipes
   # has_many :recipes, through: :user_recipes

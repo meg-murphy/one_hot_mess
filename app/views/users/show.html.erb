@@ -10,6 +10,7 @@
         <h4> Welcome back, </h4>
         <h3> <%= @user.name %>! </h3>
       </div>
+
       <div class="col-md-4">
         <div class="FBimage img-responsive">
           <% if @user.image %>
@@ -19,7 +20,22 @@
           <% end %>
         </div>
       </div>
+
+      <% if !Following.find_by(follower_id: current_user.id, followee_id: @user.id) %>
+        <%= form_tag "/follow", method: :post do %>
+            <%= hidden_field_tag :user_id, @user.id %>
+            <%= submit_tag "Follow", class:"my-btn-3 btn btn-default"%>
+        <% end %>
+        <% else %>
+        <%= form_tag "/unfollow", method: :post do %>
+            <%= hidden_field_tag :user_id, @user.id %>
+            <%= submit_tag "Unfollow", class:"my-btn-3 btn btn-default"%>
+        <% end %>
+      <% end%>
+
+
     </div>
+
 
     <div class="saved-header row">
       <h3>Your Recipes: </h3>
@@ -54,6 +70,19 @@
       <% counter += 1 %>
       <%end%>
     </div>
-  </div>
+
+    <div class="saved-header row">
+      <h3>Your Friends: </h3>
+    </div>
+
+    <div class="row">
+      <% @user.followers.each do |follower| %>
+        <a href="/users/<%=follower.id%>"><%= image_tag follower.image %></a>
+        <%= follower.name %>
+      <% end %>
+
+
+    </div>
+
   </div>
 </div>

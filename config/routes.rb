@@ -19,6 +19,9 @@ Rails.application.routes.draw do
   # get "/users/:id", to: "users#show"
   post "/user_recipes", to: "user_recipes#make_submit"
 
+  post "/follow", to: "followings#follow"
+  post "/unfollow", to: "followings#unfollow"
+
 
 
 end
