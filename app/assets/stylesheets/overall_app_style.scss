@@ -1,27 +1,18 @@
-body {
+// overall page layout, fonts
+
+h1, h2, h3, h4, p, a, ol, ul {
   font-family: 'Raleway', sans-serif;
-  color: #00264d;
+  color: #00688B;
 }
 
 .pages-body {
-  font-family: 'Raleway', sans-serif;
-  color: #00264d;
   padding-left: 30px;
   padding-right: 30px;
   padding-bottom: 30px;
   padding-top: 30px;
 }
 
-h1 {
-  font-family: 'Raleway', sans-serif;
-  color: #00264d;
-}
-
-h2 {
-  font-family: 'Raleway', sans-serif;
-  color: #00264d;
-}
-
+// logo
 .logo {
   padding-top: 0px;
   padding-bottom: 10px;
@@ -36,6 +27,8 @@ h2 {
   padding: 0px;
 }
 
+// navbar styling:
+
 .navbar.center .navbar-inner {
   text-align: center;
 }
@@ -49,11 +42,11 @@ h2 {
 .nav-search-form {
   margin: 15px;
   width: 700px;
+  color: #00688B;
   #search{
     width: 640px;
     margin-left: 5px;
     text-align: center;
-    border-style: 1px solid #cc8c8a;
   }
 }
 
@@ -61,13 +54,11 @@ h2 {
   background: transparent;
   font-family: 'Raleway', sans-serif;
   padding: 0px;
-  border-bottom: 4px double #cc8c8a;
-  // border-top: 0.5px solid #00264d;
-    border-bottom-width: 4px;
+    border-bottom-width: 6px;
     border-bottom-style: double;
-    border-bottom-color: #05B8CC;
+    border-bottom-color: #0099CC;
   a {
-    color: #00264d;
+    color: #00688B;
     padding: 0px;
     margin: 0px;
   }
@@ -77,15 +68,12 @@ h2 {
   img {
     height: 50px;
     width: auto;
+    text-align: center;
   }
 }
 
-.nav-link-btn-1 {
-  // border-bottom: 8px solid #00264d;
-}
-
 .my-dropdown-menu  {
-  background-color: rgba(241, 241, 241, 0.8);
+  background-color: rgba(240, 248, 255, 0.8);
 }
 
 #my-search {
@@ -93,10 +81,8 @@ h2 {
 }
 
 .my-btn-4 {
-  background-image: url("color-3x5box-75op-blur.png");
-  // margin-left: 0px;
-  // margin-top: 10px;
-  // margin-bottom: 10px;
+  // background-image: url("color-3x5box-75op-blur.png");
+  background-color: #FF5719;
   margin: 0px;
   height: 35px;
   padding-top: 4px;
@@ -109,7 +95,7 @@ h2 {
 }
 
 .my-icon-menu-bar {
-  color: #05B8CC;
+  color: #0099CC;
 }
 
 .my-divider  {

@@ -75,12 +75,11 @@
       <h3>Your Friends: </h3>
     </div>
 
-    <div class="row">
-      <% @user.followers.each do |follower| %>
-        <a href="/users/<%=follower.id%>"><%= image_tag follower.image %></a>
-        <%= follower.name %>
-      <% end %>
-
+      <div class="row">
+         <% @user.followers.each do |follower| %>
+           <a href="/users/<%=follower.id%>"><%= image_tag follower.image %></a>
+           <%= follower.name %>
+         <% end %>
 
     </div>
 

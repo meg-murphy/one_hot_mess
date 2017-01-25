@@ -1,7 +1,7 @@
 task :test_task => :environment do
   require 'roo'
 
-  database = Roo::Excelx.new(Rails.root + 'lib/tasks/capstone_database.xlsx')
+  database = Roo::Excelx.new(Rails.root + 'lib/tasks/capstone_database-1-25-17.xlsx')
   # puts database.info
 
   #create categories
@@ -21,7 +21,7 @@ task :test_task => :environment do
   #create recipes
   recipe_sheet = database.sheet('recipes')
   recipes = []
-  recipe_sheet.each(id: 'id', name: 'name', description: 'description', category_name: 'category_name', source: 'source', image: 'image') do |hash|
+  recipe_sheet.each(id: 'id', name: 'name', category_name: 'category_name', source: 'source', image: 'image') do |hash|
     recipes << hash
   end
   puts recipes.inspect

@@ -1,14 +1,4 @@
-// Place all the styles related to the Recipes controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
-
-.index-body {
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-bottom: 30px;
-  padding-top: 20px;
-}
+// hover over images
 
 .hovereffect {
   width: 100%;
@@ -45,7 +35,6 @@
 }
 
 .hovereffect .info {
-  // display: inline-block;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -1,82 +1,95 @@
-.my-btn-1 {
-  background-image: url("color-1.png");
-  margin-left: 60%;
+// recipes show page
+
+.recipe-show-title {
   margin-top: 0px;
-  margin-bottom: 0px;
-  width: 175px;
-  border: 1px solid #cc8c8a;
-  border-radius: 8px;
-
-}
-.my-btn-2 {
-  background-image: url("color-1.png");
-  margin-left: -75%;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  width: 175px;
-  border: 1px solid #cc8c8a;
-  border-radius: 8px;
-}
-
-.my-btn-3 {
-  background-image: url("color-1.png");
-  margin-left: 0px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  width: 175px;
-  border: 1px solid #cc8c8a;
-  border-radius: 8px;
-}
-
-.make-save-buttons {
   text-align: center;
-  margin-right: 100px;
-  margin-left: 100px;
-  padding-top: 0px;
+  color: #00688B;
+  margin-bottom: 2%;
 }
 
 .recipe-image-show{
   height: auto;
   display: block;
-  border: 2px solid #05B8CC;
+  float: right;
+  border: 2px solid #0099CC;
 }
 
 .ingredients {
   padding: 0px;
-  border: 1px solid #05B8CC;
+  border: 2px solid #0099CC;
+  float: left;
   max-width: 100%;
   max-height: 100%;
   display: block;
   margin: 2%;
   padding: 25px;
+  padding-right: 10%;
   h2 {
     margin-top: 0px;
+    margin-bottom: 5%;
+    color: #00688B;
+  }
+  ul {
+    color: #00688B;
+    font-size: 20px;
   }
 }
 
-.recipe-show-body {
-  margin: 25px;
+.my-btn-1 {
+  // background-image: url("http://i.imgur.com/2UiCqvq.jpg");
+  background-color: #FF5719;
+  float: right;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  width: 180px;
+  border-radius: 8px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: bolder;
+  text-align: center;
+  font-size: 18px;
 }
 
-.recipe-show-title {
-  margin: 0px;
+.my-btn-2 {
+  // background-image: url("color-1.png");
+  background-color: #FF5719;
+  float: left;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  width: 180px;
+  border-radius: 8px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: bolder;
   text-align: center;
+  font-size: 18px;
 }
 
 .direction-show-box {
-  // border: 1px solid #cc8c8a;
+  float: center;
   display: block;
   margin: 2%;
-  padding: 25px;
-}
-
-.recipe-show-body {
-  ol {
-    font-size: 18px;
-    font-color: #00264d;
+  padding-left: 10%;
+  padding-right: 10%;
+  max-width: 100%;
+  max-height: 100%;
+  h2 {
+    margin-top: 0px;
+    margin-bottom: 15px;
+    color: #00688B;
+  }
+  ul {
+    color: #00688B;
+    font-size: 20px;
+  }
+  .step-number {
+    font-size: 42px;
+    font-family: 'Raleway', sans-serif;
+    color: #FF5719;
   }
 }
 
+.recipe-show-body {
+  float: center;
+}
 
 .flexbox-container {
   margin: 15px 70px 50px 70px;
@@ -94,37 +107,4 @@
 .source {
   padding-top: 30px;
   font-size: 11px;
-}
-
-.icheckbox_flat-red.checked {
-  background-position: -49px 0 !important;
-}
-
-.my-checkbox  {
-  padding-left: 20px;
-  label {
-    font-size: 18px;
-  }
-}
-
-.phone-number-submit {
-  text-align: center;
-  font-family: 'Raleway', sans-serif;
-  color: #00264d;
-  padding-top: 30px;
-}
-
-
-.text-info {
-  padding-top: 30px;
-  text-align: center;
-  font-size: 18px;
-  font-family: 'Raleway', sans-serif;
-  color: #00264d;
-}
-
-.step-number {
-  font-size: 32px;
-  font-family: 'Raleway', sans-serif;
-  color: #00264d;
 }

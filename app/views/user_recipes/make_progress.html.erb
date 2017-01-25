@@ -4,7 +4,7 @@
   </div>
 
   <div class="text-info">
-    Select the ingredients you already have at home and enter your phone number below to recive a text with your shopping list.
+    Select the ingredients you already have at home to recive a text with your shopping list.
   </div>
 
 
@@ -28,10 +28,11 @@
               </div>
           </div>
           <div class="phone-number-submit row">
-            Enter your phone number to receive your shopping list: <br> <%= text_field_tag :phone_number, current_user.phone_number %>
-            <%= hidden_field_tag :id, @user_recipe.id %>
+            Enter your phone number to get your shopping list: <br>
+            <div class="phone-box"> <%= text_field_tag :phone_number, current_user.phone_number %>
+            <%= hidden_field_tag :id, @user_recipe.id %> </div>
             <div>
-              <%= submit_tag "Get shopping list", class:"my-btn-3 btn btn-default"%>
+              <%= submit_tag "Get shopping list", class:"my-btn-3 btn btn-primary"%>
             </div>
         <% end %>
       </div>
@@ -41,7 +42,7 @@
 </div>
 
     <script src="/icheck.js"></script>
-  
+
 
 <script>
 $(document).ready(function(){
