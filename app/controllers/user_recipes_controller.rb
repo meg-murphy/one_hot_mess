@@ -56,7 +56,7 @@ class UserRecipesController < ApplicationController
       @user_recipe.has_made = true
       @user_recipe.to_make = false
       @user_recipe.save
-      redirect_to "/recipes/"
+      redirect_to "/"
     else
       render "make_progress"
     end
