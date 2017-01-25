@@ -81,10 +81,18 @@
     </div>
 
       <div class="row">
+        <div class="FBimage-follow">
+
+
          <% @user.followers.each do |follower| %>
-           <a href="/users/<%=follower.id%>"><%= image_tag follower.image %></a>
-           <%= follower.name %>
+           <% if @user.image %>
+             <a href="/users/<%=follower.id%>"><%= image_tag follower.image + "?type=large"%></a>
+             <div class="username-follow">
+             <%= follower.name %>
+           </div>
+           <%end%>
          <% end %>
+       </div>
 
     </div>
 
