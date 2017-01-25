@@ -1,3 +1,4 @@
+require 'twilio-ruby'
 class UserRecipesController < ApplicationController
   layout "pages"
   def make
