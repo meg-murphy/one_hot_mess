@@ -19,19 +19,24 @@
             <%= image_tag "FB-default-pic.jpg" + "?type=large" %>
           <% end %>
         </div>
+        <div class="btn-form">
+        <% if !Following.find_by(follower_id: current_user.id, followee_id: @user.id) %>
+          <%= form_tag "/follow", method: :post do %>
+              <%= hidden_field_tag :user_id, @user.id %>
+              <%= submit_tag "Follow", class:"my-btn-6 btn btn-primary"%>
+          <% end %>
+          <% else %>
+          <%= form_tag "/unfollow", method: :post do %>
+              <%= hidden_field_tag :user_id, @user.id %>
+              <%= submit_tag "Unfollow", class:"my-btn-6 btn btn-primary"%>
+          <% end %>
+        <% end%>
       </div>
 
-      <% if !Following.find_by(follower_id: current_user.id, followee_id: @user.id) %>
-        <%= form_tag "/follow", method: :post do %>
-            <%= hidden_field_tag :user_id, @user.id %>
-            <%= submit_tag "Follow", class:"my-btn-3 btn btn-default"%>
-        <% end %>
-        <% else %>
-        <%= form_tag "/unfollow", method: :post do %>
-            <%= hidden_field_tag :user_id, @user.id %>
-            <%= submit_tag "Unfollow", class:"my-btn-3 btn btn-default"%>
-        <% end %>
-      <% end%>
+
+      </div>
+
+
 
 
     </div>
