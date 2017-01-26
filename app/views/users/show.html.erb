@@ -86,7 +86,7 @@
 
          <% @user.followees.each do |followee| %>
            <% if followee.image %>
-             <div class="col-md-4"><a href="/users/<%=followee.id%>"><%= image_tag followee.image + "?type=large" %></a>
+             <div class="col-md-2"><a href="/users/<%=followee.id%>"><%= image_tag followee.image + "?type=large" %></a>
              <div class="username-follow">
              <%= followee.name %>
            </div>
