@@ -1,418 +1,517 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-user_type = UserType.find_or_initialize_by(name: "Admin")
-user_type.save
-
-user_type = UserType.find_or_initialize_by(name: "User")
-user_type.save
-
-user = User.find_or_initialize_by(name: "Meghan", phone_number: "8052088160", user_type_id: user_type.id)
-user.save
-
-
-category = Category.find_or_initialize_by(name: "Sides")
-category.save
-
-
-recipe = Recipe.find_or_initialize_by(name: "Sweet Potato Quinoa Cakes with Blackberry Salsa",
-                    source: "http://www.howsweeteats.com/2012/05/sweet-potato-quinoa-cakes-with-blackberry-salsa/",
-                    category_id: category.id)
-recipe.save
-
-
-image = Image.find_or_initialize_by(url: "http://i.imgur.com/BqhOVWm.jpg", recipe_id: recipe.id)
-image.save
-
-
-direction = Direction.find_or_initialize_by(recipe_id: recipe.id,
-                          description: "Heat a large skillet over medium-low heat and add 1/2 tablespoons olive oil",
-                          step_order: 1)
-direction.save
-
-direction2 = Direction.find_or_initialize_by(recipe_id: recipe.id,
-                          description: "Add in sweet potato, onion, 1/4 teaspoon of salt and 1/4 teaspoon of pepper, stir, cover and cook
-                          for 10-12 minutes, or until potato is soft",
-                          step_order: 2)
-direction2.save
-
-direction3 = Direction.find_or_initialize_by(recipe_id: recipe.id,
-                          description: "Remove lid and add garlic, cooking for 30 seconds",
-                          step_order: 3)
-direction3.save
-
-direction4 = Direction.find_or_initialize_by(recipe_id: recipe.id,
-                          description: "Transfer potato mixture to a large bowl (slightly mashing potato with a fork) and add quinoa, breadcrumbs, cheese, herbs, remaining salt
-                           and pepper and mix well. Once combined, add in egg, then mix until moistened",
-                          step_order: 4)
-direction4.save
-
-direction5 = Direction.find_or_initialize_by(recipe_id: recipe.id,
-                          description: "Using your hands to bring it together, form four equally-sized patties",
-                          step_order: 5)
-direction5.save
-
-direction6 = Direction.find_or_initialize_by(recipe_id: recipe.id,
-                          description: "Heat the same skillet over medium heat and add olive oil and add cakes, cooking 3-4 minutes per side,
-                          or until golden brown",
-                          step_order: 6)
-direction6.save
-
-
-
-food = Food.find_or_initialize_by(name: "sweet potato")
-food.save
-
-ingredient = Ingredient.find_or_initialize_by(amount: "1 medium",
-                          food_id: food.id,
-                          recipe_id: recipe.id)
-ingredient.save
-
-food2 = Food.find_or_initialize_by(name: "red onion")
-food2.save
-
-ingredient2 = Ingredient.find_or_initialize_by(amount: "1/2 diced",
-                            food_id: food2.id,
-                            recipe_id: recipe.id)
-ingredient2.save
-
-food3 = Food.find_or_initialize_by(name: "salt & pepper")
-food3.save
-
-ingredient3 = Ingredient.find_or_initialize_by(food_id: food3.id,
-recipe_id: recipe.id)
-ingredient3.save
-
-food4 = Food.find_or_initialize_by(name: "garlic")
-food4.save
-
-ingredient4 = Ingredient.find_or_initialize_by(amount: "2 cloves, minced",
-                            food_id: food4.id,
-                            recipe_id: recipe.id)
-ingredient4.save
-
-food5 = Food.find_or_initialize_by(name: "olive oil")
-food5.save
-
-ingredient5 = Ingredient.find_or_initialize_by(food_id: food5.id,
-                            recipe_id: recipe.id)
-ingredient5.save
-
-food6 = Food.find_or_initialize_by(name: "quinoa")
-food6.save
-
-ingredient6 = Ingredient.find_or_initialize_by(amount: "1/2 cup cooked",
-                            food_id: food6.id,
-                            recipe_id: recipe.id)
-ingredient6.save
-
-
-food7 = Food.find_or_initialize_by(name: "whole wheat bread crumbs")
-food7.save
-
-ingredient7 = Ingredient.find_or_initialize_by(amount: "1/4 cup",
-                            food_id: food7.id,
-                            recipe_id: recipe.id)
-ingredient7.save
-
-food8 = Food.find_or_initialize_by(name: "parmesan cheese")
-food8.save
-
-ingredient8 = Ingredient.find_or_initialize_by(amount: "1/4 cup finely grated",
-                            food_id: food8.id,
-                            recipe_id: recipe.id)
-ingredient8.save
-
-food9 = Food.find_or_initialize_by(name: "cilantro")
-food9.save
-
-ingredient9 = Ingredient.find_or_initialize_by(amount: "2 tablespoons chopped fresh",
-                            food_id: food9.id,
-                            recipe_id: recipe.id)
-ingredient9.save
-
-food10 = Food.find_or_initialize_by(name: "basil")
-food10.save
-
-ingredient10 = Ingredient.find_or_initialize_by(amount: "2 tablespoons chopped fresh",
-                              food_id: food10.id,
-                              recipe_id: recipe.id)
-ingredient10.save
-
-food11 = Food.find_or_initialize_by(name: "egg")
-food11.save
-
-ingredient11 = Ingredient.find_or_initialize_by(amount: "1 large",
-                              food_id: food11.id,
-                              recipe_id: recipe.id)
-ingredient11.save
-
-
-############
-############
-
-category = Category.find_or_initialize_by(name: "Soups")
-category.save
-
-
-recipe = Recipe.find_or_initialize_by(name: "Moroccan Lamb Meatball & Couscous Soup",
-                    source: "http://blog.williams-sonoma.com/moroccan-lamb-meatball-couscous-soup/",
-                    category_id: category.id)
-recipe.save
-
-
-image = Image.find_or_initialize_by(url: "http://i.imgur.com/YQ9Bus7.jpg", recipe_id: recipe.id)
-image.save
-
-
-direction = Direction.find_or_initialize_by(recipe_id: recipe.id,
-                          description: "Preheat the oven to 375ºF and oil a baking sheet",
-                          step_order: 1)
-direction.save
-
-direction2 = Direction.find_or_initialize_by(recipe_id: recipe.id,
-                          description: "Combine the coriander, cumin, curry powder, oregano, thyme, mustard, chili powder, and cinnamon, and
-                          then stir in 1/2 teaspoon salt",
-                          step_order: 2)
-direction2.save
-
-direction3 = Direction.find_or_initialize_by(recipe_id: recipe.id,
-                          description: "Add the lamb and tomato paste and mix to combine with your hands",
-                          step_order: 3)
-direction3.save
-
-direction4 = Direction.find_or_initialize_by(recipe_id: recipe.id,
-                            description: "For each meatball, scoop up 1 teaspoon of the lamb mixture, form into a meatball, and place on the
-                            prepared pan and bake until the meatballs are cooked through (about 10 minutes)",
-                            step_order: 4)
-direction4.save
-
-direction5 = Direction.find_or_initialize_by(recipe_id: recipe.id,
-                          description: "In a small saucepan, bring 1 1/4 cups water to a boil over high heat and add the couscous and reduce
-                          the heat to low, cover, and cook until all the liquid is absorbed (8-10 minutes)",
-                          step_order: 5)
-direction5.save
-
-direction6 = Direction.find_or_initialize_by(recipe_id: recipe.id,
-                          description: "In a large pot, warm the oil over medium-high heat and add the shallots and garlic; saute for 1 minute and add the broth and bring
-                          to a boil",
-                          step_order: 6)
-direction6.save
-
-direction7 = Direction.find_or_initialize_by(recipe_id: recipe.id,
-                          description: "Remove from the heat and stir in the mint and season with salt and pepper",
-                          step_order: 7)
-direction7.save
-
-
-food = Food.find_or_initialize_by(name: "ground coriander")
-food.save
-ingredient = Ingredient.find_or_initialize_by(amount: "1 tsp.",
-                                              food_id: food.id,
-                                              recipe_id: recipe.id)
-ingredient.save
-
-food2 = Food.find_or_initialize_by(name: "ground cumin")
-food2.save
-ingredient2 = Ingredient.find_or_initialize_by(amount: "1 tsp.",
-                                                food_id: food2.id,
-                                                recipe_id: recipe.id)
-ingredient2.save
-
-food3 = Food.find_or_initialize_by(name: "salt & pepper")
-food3.save
-ingredient3 = Ingredient.find_or_initialize_by(food_id: food3.id,
-                                                recipe_id: recipe.id)
-ingredient3.save
-
-food4 = Food.find_or_initialize_by(name: "garlic")
-food4.save
-ingredient4 = Ingredient.find_or_initialize_by(amount: "5 cloves, minced",
-                                                food_id: food4.id,
-                                                recipe_id: recipe.id)
-ingredient4.save
-
-food5 = Food.find_or_initialize_by(name: "olive oil")
-food5.save
-ingredient5 = Ingredient.find_or_initialize_by(amount:"3 Tbs.",
-                                              food_id: food5.id,
-                                              recipe_id: recipe.id)
-ingredient5.save
-
-food6 = Food.find_or_initialize_by(name: "curry powder")
-food6.save
-ingredient6 = Ingredient.find_or_initialize_by(amount: "1/4 tsp.",
-                                              food_id: food6.id,
-                                              recipe_id: recipe.id)
-ingredient6.save
-
-
-food7 = Food.find_or_initialize_by(name: "dried oregano")
-food7.save
-ingredient7 = Ingredient.find_or_initialize_by(amount: "1/4 tsp.",
-                                              food_id: food7.id,
-                                              recipe_id: recipe.id)
-ingredient7.save
-
-food8 = Food.find_or_initialize_by(name: "dried thyme")
-food8.save
-ingredient8 = Ingredient.find_or_initialize_by(amount: "1/4 tsp.",
-                                              food_id: food8.id,
-                                              recipe_id: recipe.id)
-ingredient8.save
-
-food9 = Food.find_or_initialize_by(name: "dry mustard")
-food9.save
-ingredient9 = Ingredient.find_or_initialize_by(amount: "1/8 tsp.",
-                                              food_id: food9.id,
-                                              recipe_id: recipe.id)
-ingredient9.save
-
-food10 = Food.find_or_initialize_by(name: "chili powder")
-food10.save
-ingredient10 = Ingredient.find_or_initialize_by(amount: "1/8 tsp.",
-                                                food_id: food10.id,
-                                                recipe_id: recipe.id)
-ingredient10.save
-
-food11 = Food.find_or_initialize_by(name: "cinnamon")
-food11.save
-ingredient11 = Ingredient.find_or_initialize_by(amount: "pinch of",
-                                                food_id: food11.id,
-                                                recipe_id: recipe.id)
-ingredient11.save
-
-food12 = Food.find_or_initialize_by(name: "ground lamb")
-food12.save
-ingredient12 = Ingredient.find_or_initialize_by(amount: "1 lb.",
-                                                food_id: food12.id,
-                                                recipe_id: recipe.id)
-ingredient12.save
-
-food13 = Food.find_or_initialize_by(name: "tomato paste")
-food13.save
-ingredient13 = Ingredient.find_or_initialize_by(amount: "2 Tbs.",
-                                                food_id: food13.id,
-                                                recipe_id: recipe.id)
-ingredient13.save
-
-food14 = Food.find_or_initialize_by(name: "Israeli couscous")
-food14.save
-ingredient14 = Ingredient.find_or_initialize_by(amount: "1 cup",
-                                                food_id: food14.id,
-                                                recipe_id: recipe.id)
-ingredient14.save
-
-food15 = Food.find_or_initialize_by(name: "shallots")
-food15.save
-ingredient15 = Ingredient.find_or_initialize_by(amount: "2 minced",
-                                                food_id: food15.id,
-                                                recipe_id: recipe.id)
-ingredient15.save
-
-food16 = Food.find_or_initialize_by(name: "chicken broth")
-food16.save
-ingredient16 = Ingredient.find_or_initialize_by(amount: "3 cups",
-                                                food_id: food16.id,
-                                                recipe_id: recipe.id)
-ingredient16.save
-
-food17 = Food.find_or_initialize_by(name: "chopped mint")
-food17.save
-ingredient17 = Ingredient.find_or_initialize_by(amount: "1 Tbs.",
-                                                food_id: food17.id,
-                                                recipe_id: recipe.id)
-ingredient17.save
-
-
-###############
-
-category = Category.find_or_initialize_by(name: "Entrées")
-category.save
-
-recipe = Recipe.find_or_initialize_by(name: "Beet Crust Pizza",
-                    source: "http://www.bakersroyale.com/beet-crust-pizza/",
-                    category_id: category.id)
-recipe.save
-
-image = Image.find_or_initialize_by(url: "http://i.imgur.com/CMWO9hO.jpg", recipe_id: recipe.id)
-image.save
-
-
-###############
-
-category = Category.find_or_initialize_by(name: "Entrées")
-category.save
-
-recipe = Recipe.find_or_initialize_by(name: "Vegan Buddha Bowl",
-                    source: "http://wellandfull.com/2016/02/the-vegan-buddha-bowl/",
-                    category_id: category.id)
-recipe.save
-
-image = Image.find_or_initialize_by(url: "http://i.imgur.com/GcaUmq6.jpg", recipe_id: recipe.id)
-image.save
-
-
-###############
-
-category = Category.find_or_initialize_by(name: "Soups")
-category.save
-
-recipe = Recipe.find_or_initialize_by(name: "Caramelized Pork Ramen Noodle Soup with Curry Roasted Acorn Squash",
-                    source: "http://www.halfbakedharvest.com/crockpot-crispy-caramelized-pork-ramen-noodle-soup-wcurry-roasted-acorn-squash/",
-                    category_id: category.id)
-recipe.save
-
-image = Image.find_or_initialize_by(url: "http://i.imgur.com/32g5ZCd.jpg", recipe_id: recipe.id)
-image.save
-
-###############
-
-category = Category.find_or_initialize_by(name: "Entrées")
-category.save
-
-recipe = Recipe.find_or_initialize_by(name: "Butternut Squash Carbonara with Fried Sage & Caramelized Onions",
-                    source: "http://katieatthekitchendoor.com/2014/03/01/butternut-squash-carbonara-with-fried-sage-and-caramelized-onions/",
-                    category_id: category.id)
-recipe.save
-
-image = Image.find_or_initialize_by(url: "http://i.imgur.com/rF5BDIk.jpg", recipe_id: recipe.id)
-image.save
-
-###############
-
-category = Category.find_or_initialize_by(name: "Salads")
-category.save
-
-recipe = Recipe.find_or_initialize_by(name: "Heirloom Tomato, Beet and Burrata Salad",
-                    source: "http://www.feastingathome.com/heirloom-tomato-beet-and-burrata-salad/",
-                    category_id: category.id)
-recipe.save
-
-image = Image.find_or_initialize_by(url: "http://i.imgur.com/4MpIYV9.jpg", recipe_id: recipe.id)
-image.save
-
-###############
-
-category = Category.find_or_initialize_by(name: "Soups")
-category.save
-
-recipe = Recipe.find_or_initialize_by(name: "Carrot Autumn Squash Soup",
-                    source: "http://www.theglowingfridge.com/cleansing-carrot-autumn-squash-soup/",
-                    category_id: category.id)
-recipe.save
-
-image = Image.find_or_initialize_by(url: "http://i.imgur.com/mLgoUmx.jpg", recipe_id: recipe.id)
-image.save
-
-###############
-
-category = Category.find_or_initialize_by(name: "Salad")
-category.save
-
-recipe = Recipe.find_or_initialize_by(name: "Orange Avocado Salad with Lime Dressing",
-                    source: "http://ciaoflorentina.com/orange-avocado-salad-recipe-lime-dressing/",
-                    category_id: category.id)
-recipe.save
-
-image = Image.find_or_initialize_by(url: "http://i.imgur.com/DXJ3jIe.jpg", recipe_id: recipe.id)
-image.save
+Category.create!([
+  {name: "Soups"},
+  {name: "Salads"},
+  {name: "Entrées"},
+  {name: "Sides"}
+])
+Direction.create!([
+  {recipe_id: 1, description: "Heat a large skillet over medium-low heat and add 1/2 tablespoons olive oil", step_order: "1.0"},
+  {recipe_id: 1, description: "Add in sweet potato, onion, 1/4 teaspoon of salt and 1/4 teaspoon of pepper, stir, cover and cook", step_order: "2.0"},
+  {recipe_id: 1, description: "Remove lid and add garlic, cooking for 30 seconds", step_order: "3.0"},
+  {recipe_id: 1, description: "Transfer potato mixture to a large bowl (slightly mashing potato with a fork) and add quinoa, breadcrumbs, cheese, herbs, remaining salt and pepper and mix well. Once combined, add in egg, then mix until moistened", step_order: "4.0"},
+  {recipe_id: 1, description: "Using your hands to bring it together, form four equally-sized patties", step_order: "5.0"},
+  {recipe_id: 1, description: "Heat the same skillet over medium heat and add olive oil and add cakes, cooking 3-4 minutes per side, or until golden brown", step_order: "6.0"},
+  {recipe_id: 2, description: "Preheat the oven to 375ºF and oil a baking sheet", step_order: "1.0"},
+  {recipe_id: 2, description: "Combine the coriander, cumin, curry powder, oregano, thyme, mustard, chili powder, and cinnamon, and then stir in 1/2 teaspoon salt", step_order: "2.0"},
+  {recipe_id: 2, description: "Add the lamb and tomato paste and mix to combine with your hands", step_order: "3.0"},
+  {recipe_id: 2, description: "For each meatball, scoop up 1 teaspoon of the lamb mixture, form into a meatball, and place on the prepared pan and bake until the meatballs are cooked through (about 10 minutes)", step_order: "4.0"},
+  {recipe_id: 2, description: "In a small saucepan, bring 1 1/4 cups water to a boil over high heat and add the couscous and reduce the heat to low, cover, and cook until all the liquid is absorbed (8-10 minutes)", step_order: "5.0"},
+  {recipe_id: 2, description: "In a large pot, warm the oil over medium-high heat and add the shallots and garlic; saute for 1 minute and add the broth and bring to a boil", step_order: "6.0"},
+  {recipe_id: 2, description: "Remove from the heat and stir in the mint and season with salt and pepper", step_order: "7.0"},
+  {recipe_id: 3, description: "Place pizza stone on lower middle rack. Heat oven to 500° F.", step_order: "1.0"},
+  {recipe_id: 3, description: "Combine and stir water and yeast in a mixing bowl until mixture resembles miso soup. Add flour salt, honey and pureed beets to yeast mixture and combine until dough just comes together.", step_order: "2.0"},
+  {recipe_id: 3, description: "Knead the dough (on a lightly floured surface) until the flour is incorporated, about 5 minutes or until it is smooth and elastic. The dough should be moist and slightly tacky - add in more flour until smooth. Form dough into a ball.", step_order: "3.0"},
+  {recipe_id: 3, description: "Lightly oil a bowl and place dough in, turning once to coat dough with olive oil. Cover with plastic wrap and set aside in a warm area to double in size (1 - 2 hours). Then divide dough in half and refrigerate one half for another time.", step_order: "4.0"},
+  {recipe_id: 3, description: "Lightly grease a sheet of parchment paper with olive oil and transfer one ball of dough to parchment and stretch it out by hand. Lightly brush olive oil on another piece of parchment paper and place it on top of the hand-flattened dough. Use a rolling pin and work from the middle of the dough outward to flatten dough to 1/4 inch thickness. Peel off top parchment paper.", step_order: "5.0"},
+  {recipe_id: 3, description: "Spread pesto on the crust leaving 1/2 inch border. Top with goat cheese and layer with asparagus, soft boiled egg slices, mini heirloom tomatoes and remaining goat cheese.", step_order: "6.0"},
+  {recipe_id: 3, description: "Slide the pizza (with the parchment underneath) onto the hot pizza stone. Bake for 3-5 minutes until pizza crust starts to slightly brown. Rotate the pizza once and remove parchment, continue to bake for another 3 minutes.  Remove from oven. Garnish with watercress.", step_order: "7.0"},
+  {recipe_id: 4, description: "Start by cooking the quinoa. Bring 2 cups water to a boil, then add quinoa. Simmer for about 15 minutes until all water is absorbed. When done, remove from heat and keep covered for about 10 minutes so quinoa can absorb any excess water.", step_order: "1.0"},
+  {recipe_id: 4, description: "Preheat oven to 425. In a bowl, toss chickpeas, oil, and spices until chickpeas are evenly coated. On a baking sheet lined with parchment paper, bake chickpeas for 15 minutes. When done, remove from oven and let cool.", step_order: "2.0"},
+  {recipe_id: 4, description: "To make red pepper dressing, add red bell pepper, olive oil, lemon, pepper, salt, paprika, and cilantro to a blender and blend until smooth.", step_order: "3.0"},
+  {recipe_id: 4, description: "In two bowls, add quinoa, mixed greens, avocado, and chickpeas. Drizzle everything with red pepper sauce, and sprinkle with sesame seeds.", step_order: "4.0"},
+  {recipe_id: 5, description: "Add the pork to the bowl of a crockpot and pour the chicken broth, 1/4-1/2 cup soy sauce (depending on your taste), 1/4 cup rice vinegar and fish sauce over the pork", step_order: "1.0"},
+  {recipe_id: 5, description: "Add the thai red curry paste, ginger, sambal oelek, juice of 1 lime, Chinese five spice powder, black pepper and 1 tablespoon brown sugar", step_order: "2.0"},
+  {recipe_id: 5, description: "Cover the crockpot and cook on low for 7-8 hours or on high for 4-6 hours", step_order: "3.0"},
+  {recipe_id: 5, description: "About 40 minutes before you are ready to eat, roast the squash", step_order: "4.0"},
+  {recipe_id: 5, description: "Preheat the oven to 400 degrees F", step_order: "5.0"},
+  {recipe_id: 5, description: "In a small bowl mix together the melted coconut oil, curry powder, miso, brown sugar and a good pinch of pepper and add the cubed squash to a greased baking sheet and pour the curry mixture over the squash", step_order: "6.0"},
+  {recipe_id: 5, description: "Bake for 30-40 minutes, tossing a couple of times during cooking, until the squash is lightly browned and crisp", step_order: "7.0"},
+  {recipe_id: 5, description: "Meanwhile, remove the pork from the crockpot and add the mushrooms and cover the crockpot and crank the heat up to high", step_order: "8.0"},
+  {recipe_id: 5, description: "Lightly shred the pork with two forks or your hands and add the sesame oil", step_order: "9.0"},
+  {recipe_id: 5, description: "Once hot, add enough pork to cover just the surface of your skillet", step_order: "10.0"},
+  {recipe_id: 5, description: "Sprinkle a little brown sugar over the pork, add 2 tablespoons soy sauce and 2 tablespoons rice vinegar, toss", step_order: "11.0"},
+  {recipe_id: 5, description: "Stir and allow the pork to continue to caramelize, about 3-5 minutes", step_order: "12.0"},
+  {recipe_id: 5, description: "Add the Ramen noodles to the crockpot and allow them to cook 5 minutes", step_order: "13.0"},
+  {recipe_id: 5, description: "Once the noodles are cooked, stir in only half of the pork", step_order: "14.0"},
+  {recipe_id: 5, description: "Ladle the soup into bowls and top with extra caramelized pork, curry roasted acorn squash and an egg", step_order: "15.0"},
+  {recipe_id: 5, description: "Season the egg with salt and pepper and add the carrots, jalapeños, green onions and cilantro", step_order: "16.0"},
+  {recipe_id: 18, description: "Mix all the dressing ingredients together and set aside. Combine all the salad ingredients in a large bowl. Drizzle the dressing over and scatter spring onions, sprouts and herbs on top.", step_order: "4.0"},
+  {recipe_id: 6, description: "Preheat the oven to 375°F. Peel the butternut squash and cut into slices that are half an inch thick. Place on a baking sheet and drizzle with the olive oil, then sprinkle with salt and pepper. Flip slices with a spatula to coat with the oil. Roast until fork tender and slightly caramelized, about 20-25 minutes, checking and flipping after 10 minutes. When tender, remove from oven and place in a blender. Set aside.", step_order: "1.0"},
+  {recipe_id: 6, description: "Heat a medium frying pan over medium heat and add the pancetta cubes. Cook until crispy and browned on all sides, stirring frequently. Once cooked, set aside on a paper-towel lined plate. Discard all but 2 TBS of the pancetta grease. Heat the 2 TBS of grease over medium-low heat, then add the sliced onions to the pan. Cook, stirring frequently, until thoroughly caramelized and slightly crispy, about 15 minutes.", step_order: "2.0"},
+  {recipe_id: 6, description: "While the onions are cooking, bring a large pot of heavily salted water to a boil. Cook the fettuccine according to package directions and drain, reserving 1 cup of the pasta water. Place the cup of pasta water in the blender with the squash and the 1/4 c. heavy cream, and puree until very smooth. Toss the squash puree with the fettucine.", step_order: "3.0"},
+  {recipe_id: 6, description: "Just before serving, melt the 1 TBS of butter in a small frying pan. Fry the sage leaves in the butter until crispy, about 2 minutes. To assemble, divide the pasta between the serving plates, and top generously with cooked pancetta, caramelized onions, and fried sage. Serve immediately.", step_order: "4.0"},
+  {recipe_id: 7, description: "To Make the basil oil (requires overnight) blanch basil in a pot of boiling, heavily salted water for 20 seconds. Immediately strain, place under very cold running water, or an ice bath, until leaves feel cold. Gently wring out and place between paper towels, removing the water. Place in a blender with the oil and a pinch salt. Blend until smooth, careful to turn blender off if you feel it getting hot. Any heat will destroy the gorgeous color. Blend until smooth, stopping if necessary...and either place the blender in the fridge, or place the oil in a bowl, and let sit 6 hours, or overnight in the fridge. Strain. Using a fine strainer, fit it inside a bowl and pour basil oil over, let it strain, giving the solids a mix now and then or a pressing, to help release more of the oil. Once the oil is extracted (about ½ cup) pour it into a bottle with a pour spout, and keep refrigerated. (This will keep for a couple weeks in the fridge.)", step_order: "1.0"},
+  {recipe_id: 7, description: "For the salad, slice the burrata cheese, into ½ inch this slices, and carefully place on a platter. Drizzle with a little basil oil. Cut the beets into slices or wedges, place in a bowl and toss with a little olive oil, balsamic, salt and pepper. Arrange on the platter.", step_order: "2.0"},
+  {recipe_id: 7, description: "Slice the tomatoes or cut into wedges, arrange on the platter with a pinch of flaked salt. Toss the greens in a little basil oil (or sub olive oil and balsamic) and scatter overtop.", step_order: "3.0"},
+  {recipe_id: 7, description: "Drizzle the whole platter with basil oil or a balsamic syrup right before serving.", step_order: "4.0"},
+  {recipe_id: 8, description: "In a soup pot, heat the veggie broth (or water) on medium-high heat. Sauté the onion and garlic for 2-3 minutes.", step_order: "1.0"},
+  {recipe_id: 8, description: "Add in the carrots, apple and ginger. Cook for about 5 minutes.", step_order: "2.0"},
+  {recipe_id: 8, description: "Add in the butternut squash, sea salt, turmeric, thyme, cinnamon and pepper. Mix well and cook another 5 minutes.", step_order: "3.0"},
+  {recipe_id: 8, description: "Pour in the vegetable broth and almond milk. Bring to a boil then reduce heat and cover. Simmer for about 20 minutes, or until all vegetables are soft.", step_order: "4.0"},
+  {recipe_id: 8, description: "Turn off heat and stir in the fresh lemon juice and maple syrup.", step_order: "5.0"},
+  {recipe_id: 8, description: "Using a hand blender (immersion blender) pureé the soup until smooth and creamy. You can also use a regular blender but be careful! Be sure to let out the hot air from the top to prevent a soup explosion haha.", step_order: "6.0"},
+  {recipe_id: 8, description: "Garnish with fresh apple, raisins, hemp seeds, pumpkin seeds or pecans!", step_order: "7.0"},
+  {recipe_id: 8, description: "Refrigerate for up to 3 days. Freezes well.", step_order: "8.0"},
+  {recipe_id: 9, description: "Rinse the oranges and slice them into thin slices. Arrange them on a platter.", step_order: "1.0"},
+  {recipe_id: 9, description: "Slice the avocado crosswise into thin slices.", step_order: "2.0"},
+  {recipe_id: 9, description: "Arrange the avocado slices between the orange slices and set aside.", step_order: "3.0"},
+  {recipe_id: 9, description: "Transfer the cilantro leafy tops to the bowl of a food processor. Add the lime juice, olive oil ad scallions and process until smooth. Season to taste with the sea salt.", step_order: "4.0"},
+  {recipe_id: 9, description: "Pour the scallion cilantro dressing over the oranges and avocado slices and serve with a sprinkling of the sliced scallion, freshly cracked black pepper on top and more dressing on the side. Garnish with extra cilantro leaves.", step_order: "5.0"},
+  {recipe_id: 10, description: "Preheat oven to 420 F. Line a baking sheet with foil. Grease the sheet lightly with olive oil.", step_order: "1.0"},
+  {recipe_id: 10, description: "In a large bowl, mix cubed eggplant with 2 tablespoons olive oil, and season with salt and pepper. Spread chopped eggplant over the lightly greased baking sheet. Roast for 20-25 minutes until eggplant softens.", step_order: "2.0"},
+  {recipe_id: 10, description: "While eggplant is being roasted, heat 1 tablespoon of olive oil in a large skillet, add spinach and 1 minced garlic clove and cook for a couple of minutes, constantly stirring, just until spinach wilts. Remove from heat. ", step_order: "3.0"},
+  {recipe_id: 10, description: "Once eggplant is done, immediately remove it from the baking sheet into the same skillet with spinach, off heat. Add quinoa and second clove of minced garlic. This will allow cooked eggplant to release some juices when mixed in with quinoa. Mix everything well, off heat, and season with more salt if needed. Top with Feta cheese.", step_order: "4.0"},
+  {recipe_id: 11, description: "Preheat the oven to 375°F. Line a baking sheet with parchment paper.", step_order: "1.0"},
+  {recipe_id: 11, description: "Place the butternut squash on the baking sheet. Drizzle with 2 tablespoons of olive oil and sprinkle with a generous pinch of salt and pepper. Roast for 25-30 minutes, stirring occasionally.", step_order: "2.0"},
+  {recipe_id: 11, description: "Heat the remaining olive oil in a saucepan over medium heat. Add the quinoa to the pan and toast for 3-4 minutes, stirring often. Stir in the chicken or vegetable stock and a generous pinch of salt. Bring the mixture to a boil. Turn down the heat to low and cover the pan; cook for 15-20 minutes, or until the quinoa has absorbed all of the liquid. Take the pan off the heat and allow the quinoa to rest for 5 minutes covered. Fluff with a fork.", step_order: "3.0"},
+  {recipe_id: 11, description: "Transfer the quinoa to a large serving bowl. Gently fold in butternut squash, cranberries, parsley, scallions, pumpkin seeds, feta cheese, and pomegranate seeds. Season with salt and pepper to taste. Drizzle the mixture with the pomegranate molasses.", step_order: "4.0"},
+  {recipe_id: 12, description: "Preheat the oven to 375 degrees. Line a baking pan with aluminum foil. Trim both ends of the butternut squash and cut it in half lengthwise. Using a spoon, scrape out the seeds. Drizzle olive oil over the cut side of both halves and sprinkle a teaspoon of salt over them. Place the halves face down on the baking sheet and cook in the oven for 25-30 minutes, until a sharp knife easily pierces the flesh.", step_order: "1.0"},
+  {recipe_id: 12, description: "While the butternut squash is cooking, prepare the quinoa. Place the quinoa and water in a pot and bring to a boil.  Once it reaches a boil, reduce heat to medium low.  Simmer until all the water has been absorbed, approximately 15 minutes.  Remove from heat, open the lid, and let cool.", step_order: "2.0"},
+  {recipe_id: 12, description: "Transfer the flesh of the butternut squash to a blender (or you can put it in a bowl and use an immersion blender), along with 1/2 teaspoon garam masala, 1 tablespoon butter, and 1 teaspoon salt. Blend until smooth.", step_order: "3.0"},
+  {recipe_id: 12, description: "Transfer the quinoa into a bowl, along with chopped apple, parsley. In a separate bowl, whisk together lemon juice, olive oil, salt and pepper. Pour over quinoa salad and toss to combine.", step_order: "4.0"},
+  {recipe_id: 12, description: "Dry the sea scallops with paper towels.  Season with salt and pepper.", step_order: "5.0"},
+  {recipe_id: 12, description: "In a large skillet, heat the olive oil and butter on high heat.  Once it begins to smoke, add the scallops and cook for approximately 3 minutes, or until it has browned on one side.  Using tongs, flip the scallops and cook for an additional 1 to 2 minutes, depending on the size of the scallops.", step_order: "6.0"},
+  {recipe_id: 12, description: "To plate, start by spooning 3 tablespoons of butternut squash puree onto the plate (or shallow bowl). Top with a couple spoonfuls of quinoa salad, followed by the seared scallops. Spoon some of the remaining melted butter from the pan on top of the scallops.", step_order: "7.0"},
+  {recipe_id: 13, description: "Place a large pot of generously salted water onto boil. When boiling add pasta and cook until al dente. Reserve 1 cup of pasta water prior to draining.", step_order: "1.0"},
+  {recipe_id: 13, description: "In a large saute pan heat beet sauce. When warm add cream and sage. Mix to combine. If mixture is too thick loosen with reserved pasta water.", step_order: "2.0"},
+  {recipe_id: 13, description: "Add pasta and cheese to saute pan. Toss to combine. Garnish with additional cheese.", step_order: "3.0"},
+  {recipe_id: 14, description: "Heat the olive oil in a large (preferably, straight-sided) saute pan over medium-high heat. Add the pancetta and cook until golden brown and crispy, 4 to 5 minutes, stirring frequently. Reduce heat if necessary.", step_order: "1.0"},
+  {recipe_id: 14, description: "Add the unsalted butter to the pan, and add the sliced leeks. Saute the leeks for 6-8 minutes over medium-high heat until they are lightly caramelized and soft. Add the heavy cream, chopped thyme, and 1/4 cup of water to the pan, and stir ingredients together. Bring to a simmer and reduce the cream mixture for 2 to 3 minutes, or until thick enough to coat the back of a wooden spoon. Season to taste with salt and pepper.", step_order: "2.0"},
+  {recipe_id: 14, description: "Cook the pappardelle in a large pot of boiling salted water, stirring every few minutes, until al dente. Reserve 1/2 cup of pasta cooking water. Using tongs, transfer the pasta directly from the pot to the pan with the cream sauce (don't worry if you transfer some pasta water along with it, as this will help thin the sauce and help it coat the pasta).", step_order: "3.0"},
+  {recipe_id: 14, description: "Turn off the heat. Stir the pasta gently in the sauce until it is evenly coated, add the grated cheese, and add pasta liquid as necessary. Serve immediately and garnish with fresh thyme leaves and grated cheese.", step_order: "4.0"},
+  {recipe_id: 15, description: "Preheat oven to 400 degrees. Add brussels sprouts and garlic to a large mixing bowl, drizzle with olive oil and lemon juice then toss. Sprinkle with salt and pepper and toss. Spread onto a cookie sheet in an even layer.", step_order: "1.0"},
+  {recipe_id: 15, description: "Bake in preheated oven, tossing once halfway through baking, until golden brown on edges, about 25 - 30 minutes. Serve warm spritzed with more lemon juice to taste and topped with parmesan cheese.", step_order: "2.0"},
+  {recipe_id: 16, description: "Preheat the oven to 350 F.", step_order: "1.0"},
+  {recipe_id: 16, description: "Remove the tops of the carrots, place them into a roasting pan and drizzle with some olive oil. Toss the carrots to coat, and season with salt.", step_order: "2.0"},
+  {recipe_id: 16, description: "Place the tray into the oven for 30 minutes, then flip the carrots over and return to the oven for 10-15 minutes until slightly wrinkled with darkened edges.", step_order: "3.0"},
+  {recipe_id: 16, description: "Meanwhile toast the pumpkin seeds in a small, dry frying pan: Stir them over a medium heat until puffed and fragrant - this will only take a few minutes. Set aside.", step_order: "4.0"},
+  {recipe_id: 16, description: "In a blender blitz together the herbs, garlic, yogurt, chilli and water.", step_order: "5.0"},
+  {recipe_id: 16, description: "Place the roasted carrots onto a plate or serving dish and layer on the yoghurt dressing. To finish, sprinkle over the toasted pumpkin seeds and some chopped cilantro.", step_order: "6.0"},
+  {recipe_id: 17, description: "Add butter to a pan and add butternut squash, add salt & pepper. Cook until it's fully cooked and a bit caramelised. Transfer it to a plate.", step_order: "1.0"},
+  {recipe_id: 17, description: "Now to the same pot, add olive oil. Once warm, add garlic and onion and saute for few minutes. To it add rice and stir it around for 2-3 minutes. Now add wine and cook it by stirring continuously until wine is all absorbed. Now add ½ cup vegetable stock at a time and keep stirring. Once the liquid is absorbed, add another ½ cup. ", step_order: "2.0"},
+  {recipe_id: 17, description: "Now once you find that rice is al dente that is cooked but still has a little bite to it, add salt, pepper, thyme, butter, cheese and mix.", step_order: "3.0"},
+  {recipe_id: 17, description: "Now add squash, kale and stir it around. If it feels too thick, add another ½ cup of water. Cook on low and taste and adjust seasonings.", step_order: "4.0"},
+  {recipe_id: 18, description: "Rinse quinoa and place it in a small pot that you have a glass lid for. Add a few pinches of salt and 1.5 cups of water, cover with a lid and bring to boil. Once the water boils, decrease the heat to low-medium and let the quinoa simmer until all the water has been absorbed. Once ready, cool it down completely before adding it to the salad.", step_order: "1.0"},
+  {recipe_id: 18, description: "Bring a pot of water to boil. Prepare a bowl of cold water with a few ice cubes and set it next to the stove. Once the water boils, add broccoli florets and frozen peas and cook for about 90 seconds. Once the time is up, drain the vegetables and immediately plunge them into the cold water. Drain well. Lightly season with salt and pepper before adding to the salad.", step_order: "2.0"},
+  {recipe_id: 18, description: "Prepare zucchini by either turning it into zoodles (use a speed peeler for wide ribbons) or slicing it and grilling it on a grill pan. If grilling, brush each slice with a bit of olive oil, season with salt and pepper and arrange on a hot (that’s important) grill / griddle pan. Once the slices are browned on one side, turn them over and let them brown on the other side.", step_order: "3.0"}
+])
+Food.create!([
+  {name: "sweet potato"},
+  {name: "red onion"},
+  {name: "salt"},
+  {name: "pepper"},
+  {name: "garlic cloves"},
+  {name: "olive oil"},
+  {name: "cooked quinoa"},
+  {name: "whole wheat bread crumbs"},
+  {name: "parmesan cheese"},
+  {name: "fresh cilantro"},
+  {name: "fresh basil"},
+  {name: "egg"},
+  {name: "coriander"},
+  {name: "cumin"},
+  {name: "curry powder"},
+  {name: "dried oregano"},
+  {name: "dried thyme"},
+  {name: "dry mustard"},
+  {name: "chili powder"},
+  {name: "cinnamon"},
+  {name: "salt and pepper"},
+  {name: "lamb"},
+  {name: "tomato paste"},
+  {name: "Israeli couscous"},
+  {name: "shallots"},
+  {name: "garlic"},
+  {name: "chicken broth"},
+  {name: "mint"},
+  {name: "water"},
+  {name: "active-dry"},
+  {name: "all-purpose flour"},
+  {name: "kosher salt"},
+  {name: "honey"},
+  {name: "beets"},
+  {name: "goat cheese"},
+  {name: "asparagus"},
+  {name: "soft boiled eggs"},
+  {name: "roasted beet"},
+  {name: "mini heirloom tomatoes"},
+  {name: "pesto"},
+  {name: "watercress"},
+  {name: "quinoa"},
+  {name: "chickpeas"},
+  {name: "smoked paprika"},
+  {name: "turmeric"},
+  {name: "oregano"},
+  {name: "red bell pepper"},
+  {name: "lemon"},
+  {name: "paprika"},
+  {name: "mixed greens"},
+  {name: "avocado"},
+  {name: "sesame seeds"},
+  {name: "pork shoulder roast"},
+  {name: "soy sauce"},
+  {name: "rice vinegar"},
+  {name: "fish sauce"},
+  {name: "thai red curry paste"},
+  {name: "fresh ginger"},
+  {name: "sambal oelek (chili paste)"},
+  {name: "lime"},
+  {name: "Chinese five spice"},
+  {name: "black pepper"},
+  {name: "sesame oil"},
+  {name: "tablespoon brown sugar"},
+  {name: "wild mushrooms"},
+  {name: "ramen noodles"},
+  {name: "soft boiled"},
+  {name: "chopped carrots"},
+  {name: "sliced jalapenos"},
+  {name: "cilantro"},
+  {name: "green onions"},
+  {name: "acorn squash"},
+  {name: "coconut oil"},
+  {name: "white miso paste"},
+  {name: "brown sugar"},
+  {name: "butternut squash"},
+  {name: "sea salt and pepper"},
+  {name: "pancetta"},
+  {name: "onion"},
+  {name: "fettucine"},
+  {name: "heavy cream"},
+  {name: "butter"},
+  {name: "sage"},
+  {name: "heirloom or summer tomatoes"},
+  {name: "Burrata"},
+  {name: "arugula"},
+  {name: "balsamic vinegar"},
+  {name: "basil"},
+  {name: "balsamic syrup"},
+  {name: "white onion"},
+  {name: "carrots"},
+  {name: "apple"},
+  {name: "sea salt"},
+  {name: "vegetable broth"},
+  {name: "almond milk"},
+  {name: "pure maple syrup"},
+  {name: "oranges"},
+  {name: "avocados"},
+  {name: "scallions"},
+  {name: "eggplant"},
+  {name: "spinach"},
+  {name: "Feta cheese"},
+  {name: "vegetable stock"},
+  {name: "dried cranberries"},
+  {name: "Italian parsley"},
+  {name: "pumpkin seeds"},
+  {name: "pomegranate seeds"},
+  {name: "pomegranate molasses"},
+  {name: "Garam masala"},
+  {name: "apples"},
+  {name: "fresh parsley"},
+  {name: "lemon juice"},
+  {name: "sea scallops"},
+  {name: "rotini pasta"},
+  {name: "roasted beet hummus"},
+  {name: "heavy whipping cream"},
+  {name: "dried sage"},
+  {name: "Parmigiano-Reggiano cheese"},
+  {name: "leek"},
+  {name: "fresh thyme"},
+  {name: "pappardelle pasta"},
+  {name: "brussels sprouts"},
+  {name: "cilantro leaves"},
+  {name: "mint leaves"},
+  {name: "black garlic"},
+  {name: "plain yogurt"},
+  {name: "red chilli pepper"},
+  {name: "kale"},
+  {name: "arborio rice"},
+  {name: "white wine"},
+  {name: "Asiago cheese or Parmesan cheese"},
+  {name: "thyme"},
+  {name: "baby spinach"},
+  {name: "red cabbage"},
+  {name: "broccoli"},
+  {name: "peas"},
+  {name: "cucumber"},
+  {name: "bean sprouts"},
+  {name: "zucchini"},
+  {name: "spring onion,"},
+  {name: "Kalamata olives"},
+  {name: "chilli paste"}
+])
+Image.create!([
+  {url: "http://i.imgur.com/BqhOVWm.jpg", recipe_id: 1},
+  {url: "http://i.imgur.com/YQ9Bus7.jpg", recipe_id: 2},
+  {url: "http://i.imgur.com/CMWO9hO.jpg", recipe_id: 3},
+  {url: "http://i.imgur.com/GcaUmq6.jpg", recipe_id: 4},
+  {url: "http://i.imgur.com/32g5ZCd.jpg", recipe_id: 5},
+  {url: "http://i.imgur.com/rF5BDIk.jpg", recipe_id: 6},
+  {url: "http://i.imgur.com/4MpIYV9.jpg", recipe_id: 7},
+  {url: "http://i.imgur.com/mLgoUmx.jpg", recipe_id: 8},
+  {url: "http://i.imgur.com/DXJ3jIe.jpg", recipe_id: 9},
+  {url: "http://i.imgur.com/spn3RDt.jpg", recipe_id: 10},
+  {url: "http://i.imgur.com/ZQxygZM.jpg", recipe_id: 11},
+  {url: "http://i.imgur.com/FLRyG5w.jpg", recipe_id: 12},
+  {url: "http://i.imgur.com/MFYUlya.jpg", recipe_id: 13},
+  {url: "http://i.imgur.com/HHbCBJq.jpg", recipe_id: 14},
+  {url: "http://i.imgur.com/Mhjmkxd.jpg", recipe_id: 15},
+  {url: "http://i.imgur.com/rTVqQTc.jpg", recipe_id: 16},
+  {url: "http://i.imgur.com/6BBd3P3.jpg", recipe_id: 17},
+  {url: "http://i.imgur.com/ZtgMPWE.jpg", recipe_id: 18}
+])
+Ingredient.create!([
+  {amount: "1 medium, peeled/ chopped", food_id: 1, recipe_id: 1},
+  {amount: "1/2 diced", food_id: 2, recipe_id: 1},
+  {amount: "1/2 teaspoon", food_id: 3, recipe_id: 1},
+  {amount: "1/2 teaspoon", food_id: 4, recipe_id: 1},
+  {amount: "2 minced", food_id: 5, recipe_id: 1},
+  {amount: "1 tablespoon", food_id: 6, recipe_id: 1},
+  {amount: "1/2 cup ", food_id: 7, recipe_id: 1},
+  {amount: "1/4 cup ", food_id: 8, recipe_id: 1},
+  {amount: "1/4 cup finely grated ", food_id: 9, recipe_id: 1},
+  {amount: "2 tablespoons chopped", food_id: 10, recipe_id: 1},
+  {amount: "2 tablespoons chopped", food_id: 11, recipe_id: 1},
+  {amount: "1 large", food_id: 12, recipe_id: 1},
+  {amount: "1 tsp. ground ", food_id: 13, recipe_id: 2},
+  {amount: "1 tsp. ground", food_id: 14, recipe_id: 2},
+  {amount: "1/4 tsp.", food_id: 15, recipe_id: 2},
+  {amount: "1/4 tsp.", food_id: 16, recipe_id: 2},
+  {amount: "1/4 tsp. ", food_id: 17, recipe_id: 2},
+  {amount: "1/8 tsp.", food_id: 18, recipe_id: 2},
+  {amount: "1/8 tsp.", food_id: 19, recipe_id: 2},
+  {amount: "Pinch of ground", food_id: 20, recipe_id: 2},
+  {amount: nil, food_id: 21, recipe_id: 2},
+  {amount: "1 lb. ground", food_id: 22, recipe_id: 2},
+  {amount: "2 Tbs.", food_id: 23, recipe_id: 2},
+  {amount: "1 cup", food_id: 24, recipe_id: 2},
+  {amount: "3 Tbs.", food_id: 6, recipe_id: 2},
+  {amount: "2 minced", food_id: 25, recipe_id: 2},
+  {amount: "5 cloves minced", food_id: 26, recipe_id: 2},
+  {amount: "3 cups ", food_id: 27, recipe_id: 2},
+  {amount: "1 Tbs. chopped", food_id: 28, recipe_id: 2},
+  {amount: "1 cup lukewarm", food_id: 29, recipe_id: 3},
+  {amount: "2 teaspoon", food_id: 30, recipe_id: 3},
+  {amount: "17 ounces unbleached ", food_id: 31, recipe_id: 3},
+  {amount: "1 1/2 teaspoons ", food_id: 32, recipe_id: 3},
+  {amount: "2 teaspoons", food_id: 33, recipe_id: 3},
+  {amount: "3/4 cup pureed", food_id: 34, recipe_id: 3},
+  {amount: "4 oz. ", food_id: 35, recipe_id: 3},
+  {amount: "10-12 stalks", food_id: 36, recipe_id: 3},
+  {amount: "3 sliced", food_id: 37, recipe_id: 3},
+  {amount: "1 sliced", food_id: 38, recipe_id: 3},
+  {amount: "4 oz.", food_id: 39, recipe_id: 3},
+  {amount: "3-4 tablespoons", food_id: 40, recipe_id: 3},
+  {amount: "1 handful of", food_id: 41, recipe_id: 3},
+  {amount: "1 cup, rinsed", food_id: 42, recipe_id: 4},
+  {amount: "2 cups", food_id: 29, recipe_id: 4},
+  {amount: "1½ cups cooked", food_id: 43, recipe_id: 4},
+  {amount: "drizzle", food_id: 6, recipe_id: 4},
+  {amount: "1/2 tsp", food_id: 3, recipe_id: 4},
+  {amount: "1/2 tsp", food_id: 44, recipe_id: 4},
+  {amount: "1 tsp", food_id: 19, recipe_id: 4},
+  {amount: "1/8 tsp", food_id: 45, recipe_id: 4},
+  {amount: "1/2 tsp", food_id: 46, recipe_id: 4},
+  {amount: "1.0", food_id: 47, recipe_id: 4},
+  {amount: "2 tbs", food_id: 6, recipe_id: 4},
+  {amount: "1.0", food_id: 48, recipe_id: 4},
+  {amount: "1/2 tsp", food_id: 4, recipe_id: 4},
+  {amount: "1/2 tsp", food_id: 3, recipe_id: 4},
+  {amount: "1/2 tsp", food_id: 49, recipe_id: 4},
+  {amount: "1/4 cup", food_id: 10, recipe_id: 4},
+  {amount: nil, food_id: 50, recipe_id: 4},
+  {amount: "1.0", food_id: 51, recipe_id: 4},
+  {amount: nil, food_id: 52, recipe_id: 4},
+  {amount: "2 -3 lbs.", food_id: 53, recipe_id: 5},
+  {amount: "4 cups", food_id: 27, recipe_id: 5},
+  {amount: "1/4-1/2 cup", food_id: 54, recipe_id: 5},
+  {amount: "1/4 cup", food_id: 55, recipe_id: 5},
+  {amount: "2 tablespoons", food_id: 56, recipe_id: 5},
+  {amount: "2 tablespoons", food_id: 57, recipe_id: 5},
+  {amount: "1 tablespoon", food_id: 58, recipe_id: 5},
+  {amount: "1 tablespoon", food_id: 59, recipe_id: 5},
+  {amount: "1.0", food_id: 60, recipe_id: 5},
+  {amount: "1 tablespoon", food_id: 61, recipe_id: 5},
+  {amount: "1 teaspoon", food_id: 62, recipe_id: 5},
+  {amount: "2 tablespoons", food_id: 63, recipe_id: 5},
+  {amount: "1/4 cup", food_id: 64, recipe_id: 5},
+  {amount: "2 cups", food_id: 65, recipe_id: 5},
+  {amount: "4 packs", food_id: 66, recipe_id: 5},
+  {amount: "4.0", food_id: 67, recipe_id: 5},
+  {amount: nil, food_id: 68, recipe_id: 5},
+  {amount: nil, food_id: 69, recipe_id: 5},
+  {amount: nil, food_id: 70, recipe_id: 5},
+  {amount: nil, food_id: 71, recipe_id: 5},
+  {amount: "1 medium, seeded + diced", food_id: 72, recipe_id: 5},
+  {amount: "2 tablespoons, melted", food_id: 73, recipe_id: 5},
+  {amount: "1 tablespoon", food_id: 15, recipe_id: 5},
+  {amount: "1 tablespoon", food_id: 74, recipe_id: 5},
+  {amount: "1 tablespoon", food_id: 75, recipe_id: 5},
+  {amount: "1 small ", food_id: 76, recipe_id: 6},
+  {amount: "2 Tbs. ", food_id: 6, recipe_id: 6},
+  {amount: nil, food_id: 77, recipe_id: 6},
+  {amount: "1/2 lb. sliced/cut into small cubes", food_id: 78, recipe_id: 6},
+  {amount: "1 small, peeled, sliced ", food_id: 79, recipe_id: 6},
+  {amount: "1 lb.", food_id: 80, recipe_id: 6},
+  {amount: "1/4 cup", food_id: 81, recipe_id: 6},
+  {amount: "1 Tbs.", food_id: 82, recipe_id: 6},
+  {amount: "1 small bunch", food_id: 83, recipe_id: 6},
+  {amount: "2 lbs ", food_id: 84, recipe_id: 7},
+  {amount: "1 ½ lb cooked", food_id: 34, recipe_id: 7},
+  {amount: "2 balls of", food_id: 85, recipe_id: 7},
+  {amount: "1-2 cups", food_id: 86, recipe_id: 7},
+  {amount: nil, food_id: 21, recipe_id: 7},
+  {amount: "1-2 teaspoon ", food_id: 6, recipe_id: 7},
+  {amount: "1-2 teaspoon ", food_id: 87, recipe_id: 7},
+  {amount: "½ cup chopped", food_id: 88, recipe_id: 7},
+  {amount: "Drizzle", food_id: 89, recipe_id: 7},
+  {amount: "4 cups", food_id: 88, recipe_id: 7},
+  {amount: "1 cup ", food_id: 6, recipe_id: 7},
+  {amount: "1/2 chopped", food_id: 90, recipe_id: 8},
+  {amount: "1-2 cloves, minced", food_id: 26, recipe_id: 8},
+  {amount: "2 medium-sized, chopped", food_id: 91, recipe_id: 8},
+  {amount: "1 chopped", food_id: 92, recipe_id: 8},
+  {amount: "1.5 tablespoons, minced", food_id: 58, recipe_id: 8},
+  {amount: "1 small, peeled and chopped", food_id: 76, recipe_id: 8},
+  {amount: "1 teaspoon ", food_id: 93, recipe_id: 8},
+  {amount: "1/2 teaspoon", food_id: 45, recipe_id: 8},
+  {amount: "1/2 teaspoon", food_id: 17, recipe_id: 8},
+  {amount: "1/4 teaspoon", food_id: 20, recipe_id: 8},
+  {amount: nil, food_id: 62, recipe_id: 8},
+  {amount: "4-5 cups ", food_id: 94, recipe_id: 8},
+  {amount: "1/2 cup unsweetened ", food_id: 95, recipe_id: 8},
+  {amount: "2017-01-02", food_id: 48, recipe_id: 8},
+  {amount: "2 tablespoons ", food_id: 96, recipe_id: 8},
+  {amount: "4.0", food_id: 97, recipe_id: 9},
+  {amount: "2.0", food_id: 98, recipe_id: 9},
+  {amount: "1 small bunch", food_id: 70, recipe_id: 9},
+  {amount: "3.0", food_id: 99, recipe_id: 9},
+  {amount: "1.0", food_id: 60, recipe_id: 9},
+  {amount: "4 tbsp", food_id: 6, recipe_id: 9},
+  {amount: "pinch", food_id: 93, recipe_id: 9},
+  {amount: nil, food_id: 62, recipe_id: 9},
+  {amount: "1 large, cubed", food_id: 100, recipe_id: 10},
+  {amount: "3 tablespoons", food_id: 6, recipe_id: 10},
+  {amount: nil, food_id: 21, recipe_id: 10},
+  {amount: "2 cloves", food_id: 26, recipe_id: 10},
+  {amount: "5 to 10 ounces ", food_id: 101, recipe_id: 10},
+  {amount: "1 and 1/2 cups cooked", food_id: 42, recipe_id: 10},
+  {amount: "1/4 cup ", food_id: 102, recipe_id: 10},
+  {amount: "1 small, cubed", food_id: 76, recipe_id: 11},
+  {amount: "4 tablespoons ", food_id: 6, recipe_id: 11},
+  {amount: "1 cup", food_id: 42, recipe_id: 11},
+  {amount: "2 cups ", food_id: 103, recipe_id: 11},
+  {amount: "1/2 cup", food_id: 104, recipe_id: 11},
+  {amount: "1/3 cup chopped", food_id: 105, recipe_id: 11},
+  {amount: "1/3 cup thinly sliced", food_id: 99, recipe_id: 11},
+  {amount: "1/2 cup roasted salted", food_id: 106, recipe_id: 11},
+  {amount: "1/2 cup ", food_id: 102, recipe_id: 11},
+  {amount: "1/2 cup fresh ", food_id: 107, recipe_id: 11},
+  {amount: nil, food_id: 21, recipe_id: 11},
+  {amount: nil, food_id: 108, recipe_id: 11},
+  {amount: "1 small", food_id: 76, recipe_id: 12},
+  {amount: nil, food_id: 6, recipe_id: 12},
+  {amount: nil, food_id: 21, recipe_id: 12},
+  {amount: "4 tablespoon", food_id: 82, recipe_id: 12},
+  {amount: nil, food_id: 109, recipe_id: 12},
+  {amount: "1 cup", food_id: 42, recipe_id: 12},
+  {amount: "2.0", food_id: 110, recipe_id: 12},
+  {amount: "2 tablespoons chopped ", food_id: 111, recipe_id: 12},
+  {amount: "1 ounce", food_id: 112, recipe_id: 12},
+  {amount: "1 pound ", food_id: 113, recipe_id: 12},
+  {amount: "1 pound ", food_id: 114, recipe_id: 13},
+  {amount: nil, food_id: 3, recipe_id: 13},
+  {amount: nil, food_id: 115, recipe_id: 13},
+  {amount: "1/4 cup ", food_id: 116, recipe_id: 13},
+  {amount: "1/2 teaspoon ", food_id: 117, recipe_id: 13},
+  {amount: "1/4 cup grated", food_id: 118, recipe_id: 13},
+  {amount: "1 tablespoon ", food_id: 6, recipe_id: 14},
+  {amount: "1 tablespoon unsalted", food_id: 82, recipe_id: 14},
+  {amount: "2 ounces, finely diced", food_id: 78, recipe_id: 14},
+  {amount: "1 large, thinly sliced", food_id: 119, recipe_id: 14},
+  {amount: nil, food_id: 93, recipe_id: 14},
+  {amount: "1/2 cup ", food_id: 81, recipe_id: 14},
+  {amount: "2 teaspoons chopped", food_id: 120, recipe_id: 14},
+  {amount: "6 ounces dried egg ", food_id: 121, recipe_id: 14},
+  {amount: "1.5 ounces", food_id: 118, recipe_id: 14},
+  {amount: "1 lb sliced ", food_id: 122, recipe_id: 15},
+  {amount: "2 - 3 cloves, minced", food_id: 26, recipe_id: 15},
+  {amount: "2 Tbsp", food_id: 6, recipe_id: 15},
+  {amount: "2 tsp", food_id: 112, recipe_id: 15},
+  {amount: "1/2 tsp ", food_id: 93, recipe_id: 15},
+  {amount: "1/2 tsp ", food_id: 62, recipe_id: 15},
+  {amount: "1/4 cup ", food_id: 9, recipe_id: 15},
+  {amount: "10.0", food_id: 91, recipe_id: 16},
+  {amount: nil, food_id: 6, recipe_id: 16},
+  {amount: nil, food_id: 3, recipe_id: 16},
+  {amount: "2 tbsp", food_id: 106, recipe_id: 16},
+  {amount: "1/4 cup", food_id: 123, recipe_id: 16},
+  {amount: "1/4 cup ", food_id: 124, recipe_id: 16},
+  {amount: "1 clove", food_id: 125, recipe_id: 16},
+  {amount: "4 tbsp ", food_id: 126, recipe_id: 16},
+  {amount: "2017-01-04", food_id: 127, recipe_id: 16},
+  {amount: "1 tbsp", food_id: 29, recipe_id: 16},
+  {amount: "3 cups chopped ", food_id: 76, recipe_id: 17},
+  {amount: "1 cup finely chopped", food_id: 128, recipe_id: 17},
+  {amount: "2 tbsp", food_id: 6, recipe_id: 17},
+  {amount: nil, food_id: 21, recipe_id: 17},
+  {amount: "4 cloves, chopped", food_id: 26, recipe_id: 17},
+  {amount: "1/2 cup, chopped", food_id: 79, recipe_id: 17},
+  {amount: "1/2 cup", food_id: 129, recipe_id: 17},
+  {amount: "3/4 cup", food_id: 130, recipe_id: 17},
+  {amount: "3 cups ", food_id: 103, recipe_id: 17},
+  {amount: "1/2 cup", food_id: 131, recipe_id: 17},
+  {amount: "1 tbsp", food_id: 82, recipe_id: 17},
+  {amount: "1 tsp", food_id: 132, recipe_id: 17},
+  {amount: "1 cup", food_id: 42, recipe_id: 18},
+  {amount: "3.5 oz ", food_id: 133, recipe_id: 18},
+  {amount: "2017-01-02", food_id: 51, recipe_id: 18},
+  {amount: "1 small wedge, shredded", food_id: 134, recipe_id: 18},
+  {amount: "1 small head of ", food_id: 135, recipe_id: 18},
+  {amount: "1/2 cup ", food_id: 136, recipe_id: 18},
+  {amount: "1 sliced", food_id: 137, recipe_id: 18},
+  {amount: "1/2 cup ", food_id: 138, recipe_id: 18},
+  {amount: "1.0", food_id: 139, recipe_id: 18},
+  {amount: "1 large, sliced", food_id: 140, recipe_id: 18},
+  {amount: "10 green", food_id: 141, recipe_id: 18},
+  {amount: "handful", food_id: 28, recipe_id: 18},
+  {amount: "handful", food_id: 88, recipe_id: 18},
+  {amount: "3 tbsp", food_id: 6, recipe_id: 18},
+  {amount: "3 tbsp", food_id: 112, recipe_id: 18},
+  {amount: nil, food_id: 21, recipe_id: 18},
+  {amount: "1/2 roasted or raw clove of ", food_id: 26, recipe_id: 18},
+  {amount: "1 tsp ", food_id: 142, recipe_id: 18}
+])
+Recipe.create!([
+  {name: "Sweet Potato Quinoa Cakes with Blackberry Salsa", source: "http://www.howsweeteats.com/2012/05/sweet-potato-quinoa-cakes-with-blackberry-salsa/", category_id: 4},
+  {name: "Moroccan Lamb Meatball & Couscous Soup", source: "http://blog.williams-sonoma.com/moroccan-lamb-meatball-couscous-soup/", category_id: 1},
+  {name: "Beet Crust Pizza", source: "http://www.bakersroyale.com/beet-crust-pizza/", category_id: 3},
+  {name: "Vegan Buddha Bowl", source: "http://wellandfull.com/2016/02/the-vegan-buddha-bowl/", category_id: 3},
+  {name: "Caramelized Pork Ramen Noodle Soup with Curry Roasted Acorn Squash", source: "http://www.halfbakedharvest.com/crockpot-crispy-caramelized-pork-ramen-noodle-soup-wcurry-roasted-acorn-squash/", category_id: 1},
+  {name: "Butternut Squash Carbonara with Fried Sage & Caramelized Onions", source: "http://katieatthekitchendoor.com/2014/03/01/butternut-squash-carbonara-with-fried-sage-and-caramelized-onions/", category_id: 3},
+  {name: "Heirloom Tomato, Beet and Burrata Salad", source: "http://www.feastingathome.com/heirloom-tomato-beet-and-burrata-salad/", category_id: 2},
+  {name: "Carrot Autumn Squash Soup", source: "http://www.theglowingfridge.com/cleansing-carrot-autumn-squash-soup/", category_id: 1},
+  {name: "Orange Avocado Salad with Lime Dressing", source: "http://ciaoflorentina.com/orange-avocado-salad-recipe-lime-dressing/", category_id: 2},
+  {name: "Roasted Eggplant with Spinach, Quinoa, and Feta", source: "http://juliasalbum.com/2014/10/spinach-eggplant-and-feta-quinoa/", category_id: 3},
+  {name: "Roasted Butternut Squash Quinoa Salad ", source: "http://www.onesweetmess.com/2015/11/16/roasted-butternut-squash-quinoa-salad/", category_id: 3},
+  {name: "Seared Scallops with Quinoa and Apple Salad & Butternut Squash Puree", source: "http://www.athoughtforfood.net/blog/seared-scallops-quinoa-apple-salad-butternut-squash-puree/#more-20098=", category_id: 3},
+  {name: "Pasta with Creamy Roasted Beet Sauce", source: "http://bellalimento.com/2013/11/04/pasta-with-creamy-roasted-beet-sauce/", category_id: 3},
+  {name: "Creamy Leek and Pancetta Pappardelle", source: "http://www.lazycatkitchen.com/quinoa-superfood-salad/", category_id: 3},
+  {name: "Garlic Lemon and Parmesan Roasted Brussel Sprouts", source: "http://www.cookingclassy.com/garlic-lemon-parmesan-roasted-brussel-sprouts/", category_id: 4},
+  {name: "Carrots with Black Garlic & Herb Yoghurt ", source: "http://www.topwithcinnamon.com/2015/04/carrots-roasted-garlic-herb-yoghurt.html", category_id: 4},
+  {name: "Butternut Squash Kale Risotto", source: "http://www.naivecookcooks.com/butternut-squash-kale-risotto/", category_id: 3},
+  {name: "Quinoa Superfood Salad", source: "http://www.lazycatkitchen.com/quinoa-superfood-salad/", category_id: 2}
+])
+UserType.create!([
+  {name: "Admin"},
+  {name: "User"}
+])

@@ -1,7 +1,7 @@
 task :test_task => :environment do
   require 'roo'
 
-  database = Roo::Excelx.new(Rails.root + 'lib/tasks/capstone_database-1-25-17.xlsx')
+  database = Roo::Excelx.new(Rails.root + 'lib/tasks/capstone_database-1-25-17v2.xlsx')
   # puts database.info
 
   #create categories
