@@ -4,6 +4,7 @@ Category.create!([
   {name: "Entrées"},
   {name: "Sides"}
 ])
+
 Food.create!([
   {name: "sweet potato"},
   {name: "red onion"},
@@ -148,26 +149,7 @@ Food.create!([
   {name: "Kalamata olives"},
   {name: "chilli paste"}
 ])
-Image.create!([
-  {url: "http://i.imgur.com/BqhOVWm.jpg", recipe_id: 1},
-  {url: "http://i.imgur.com/YQ9Bus7.jpg", recipe_id: 2},
-  {url: "http://i.imgur.com/CMWO9hO.jpg", recipe_id: 3},
-  {url: "http://i.imgur.com/GcaUmq6.jpg", recipe_id: 4},
-  {url: "http://i.imgur.com/32g5ZCd.jpg", recipe_id: 5},
-  {url: "http://i.imgur.com/rF5BDIk.jpg", recipe_id: 6},
-  {url: "http://i.imgur.com/4MpIYV9.jpg", recipe_id: 7},
-  {url: "http://i.imgur.com/mLgoUmx.jpg", recipe_id: 8},
-  {url: "http://i.imgur.com/DXJ3jIe.jpg", recipe_id: 9},
-  {url: "http://i.imgur.com/spn3RDt.jpg", recipe_id: 10},
-  {url: "http://i.imgur.com/ZQxygZM.jpg", recipe_id: 11},
-  {url: "http://i.imgur.com/FLRyG5w.jpg", recipe_id: 12},
-  {url: "http://i.imgur.com/MFYUlya.jpg", recipe_id: 13},
-  {url: "http://i.imgur.com/HHbCBJq.jpg", recipe_id: 14},
-  {url: "http://i.imgur.com/Mhjmkxd.jpg", recipe_id: 15},
-  {url: "http://i.imgur.com/rTVqQTc.jpg", recipe_id: 16},
-  {url: "http://i.imgur.com/6BBd3P3.jpg", recipe_id: 17},
-  {url: "http://i.imgur.com/ZtgMPWE.jpg", recipe_id: 18}
-])
+
 Recipe.create!([
   {name: "Sweet Potato Quinoa Cakes with Blackberry Salsa", source: "http://www.howsweeteats.com/2012/05/sweet-potato-quinoa-cakes-with-blackberry-salsa/", category_id: 4},
   {name: "Moroccan Lamb Meatball & Couscous Soup", source: "http://blog.williams-sonoma.com/moroccan-lamb-meatball-couscous-soup/", category_id: 1},
@@ -188,6 +170,28 @@ Recipe.create!([
   {name: "Butternut Squash Kale Risotto", source: "http://www.naivecookcooks.com/butternut-squash-kale-risotto/", category_id: 3},
   {name: "Quinoa Superfood Salad", source: "http://www.lazycatkitchen.com/quinoa-superfood-salad/", category_id: 2}
 ])
+
+Image.create!([
+  {url: "http://i.imgur.com/BqhOVWm.jpg", recipe_id: 1},
+  {url: "http://i.imgur.com/YQ9Bus7.jpg", recipe_id: 2},
+  {url: "http://i.imgur.com/CMWO9hO.jpg", recipe_id: 3},
+  {url: "http://i.imgur.com/GcaUmq6.jpg", recipe_id: 4},
+  {url: "http://i.imgur.com/32g5ZCd.jpg", recipe_id: 5},
+  {url: "http://i.imgur.com/rF5BDIk.jpg", recipe_id: 6},
+  {url: "http://i.imgur.com/4MpIYV9.jpg", recipe_id: 7},
+  {url: "http://i.imgur.com/mLgoUmx.jpg", recipe_id: 8},
+  {url: "http://i.imgur.com/DXJ3jIe.jpg", recipe_id: 9},
+  {url: "http://i.imgur.com/spn3RDt.jpg", recipe_id: 10},
+  {url: "http://i.imgur.com/ZQxygZM.jpg", recipe_id: 11},
+  {url: "http://i.imgur.com/FLRyG5w.jpg", recipe_id: 12},
+  {url: "http://i.imgur.com/MFYUlya.jpg", recipe_id: 13},
+  {url: "http://i.imgur.com/HHbCBJq.jpg", recipe_id: 14},
+  {url: "http://i.imgur.com/Mhjmkxd.jpg", recipe_id: 15},
+  {url: "http://i.imgur.com/rTVqQTc.jpg", recipe_id: 16},
+  {url: "http://i.imgur.com/6BBd3P3.jpg", recipe_id: 17},
+  {url: "http://i.imgur.com/ZtgMPWE.jpg", recipe_id: 18}
+])
+
 Ingredient.create!([
   {amount: "1 medium, peeled/ chopped", food_id: 1, recipe_id: 1},
   {amount: "1/2 diced", food_id: 2, recipe_id: 1},
@@ -410,6 +414,7 @@ Ingredient.create!([
   {amount: "1/2 roasted or raw clove of ", food_id: 26, recipe_id: 18},
   {amount: "1 tsp ", food_id: 142, recipe_id: 18}
 ])
+
 Direction.create!([
   {recipe_id: 1, description: "Heat a large skillet over medium-low heat and add 1/2 tablespoons olive oil", step_order: "1.0"},
   {recipe_id: 1, description: "Add in sweet potato, onion, 1/4 teaspoon of salt and 1/4 teaspoon of pepper, stir, cover and cook", step_order: "2.0"},
@@ -511,6 +516,7 @@ Direction.create!([
   {recipe_id: 18, description: "Bring a pot of water to boil. Prepare a bowl of cold water with a few ice cubes and set it next to the stove. Once the water boils, add broccoli florets and frozen peas and cook for about 90 seconds. Once the time is up, drain the vegetables and immediately plunge them into the cold water. Drain well. Lightly season with salt and pepper before adding to the salad.", step_order: "2.0"},
   {recipe_id: 18, description: "Prepare zucchini by either turning it into zoodles (use a speed peeler for wide ribbons) or slicing it and grilling it on a grill pan. If grilling, brush each slice with a bit of olive oil, season with salt and pepper and arrange on a hot (that’s important) grill / griddle pan. Once the slices are browned on one side, turn them over and let them brown on the other side.", step_order: "3.0"}
 ])
+
 UserType.create!([
   {name: "Admin"},
   {name: "User"}
