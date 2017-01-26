@@ -4,12 +4,12 @@
     <% @categories.each do |category| %>
       <h1> <%= link_to category.name, "/categories/#{category.id}"%></h1>
 
-      <% counter = 0 %>
+      <!-- <% counter = 0 %> -->
         <div class="row">
-          <% category.recipes.each do |recipe| %>
-            <% if counter % 3 == 0 %>
-              <div class="row">
-            <% end %>
+          <% category.recipes[0..2].each do |recipe| %>
+            <!-- <% if counter % 3 == 0 %> -->
+          <div class="cat-row row">
+            <!-- <% end %> -->
             <div class="col-md-4">
               <div class="hovereffect">
                 <img class="img-responsive" alt="Rails" src="<%=recipe.images.first.url%>">
@@ -22,10 +22,10 @@
                 </a>
               </div>
             </div>
-            <% if counter % 3 == 0 && counter != 0 %>
+            <!-- <% if counter % 3 == 0 && counter != 0 %>
               </div>
             <% end %>
-            <% counter += 1 %>
+            <% counter += 1 %> -->
           <%end%>
         </div>
       </div>
