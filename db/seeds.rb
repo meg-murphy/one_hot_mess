@@ -380,7 +380,7 @@ image.save
 
 ###############
 
-category = Category.find_or_initialize_by(name: "Salad")
+category = Category.find_or_initialize_by(name: "Salads")
 category.save
 
 recipe = Recipe.find_or_initialize_by(name: "Heirloom Tomato, Beet and Burrata Salad",

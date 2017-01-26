@@ -4,15 +4,14 @@
 
   <div class="ingredients-search-background">
     <div class="wrapper">
-
-
-
-      <%= form_tag "/", :method => "get" do %>
-          <%= text_area_tag :ingredient_search, params[:ingredient_search], placeholder: "List ingredients here:\n kale \n butternut squash \n chicken \n etc." %>
-          <div class="ingredients-search-form">
-            <center><button type="submit" class="my-btn-3 btn btn-primary">Search Recipes</button></center>
-          </div>
-      <% end %>
+      <div class="search-form2">
+        <%= form_tag "/", :method => "get" do %>
+            <%= text_area_tag :ingredient_search, params[:ingredient_search], placeholder: "List ingredients here:\n kale \n butternut squash \n chicken \n etc." %>
+            <div class="ingredients-search-form">
+              <center><button type="submit" class="my-btn-3 btn btn-primary">Search Recipes</button></center>
+            </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
